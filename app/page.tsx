@@ -2,31 +2,31 @@ import "./page.css"
 import { CourseCard } from "../components/index"
 import axios from "axios";
 import gql from "graphql-tag";
+import { getContentful } from "@/lib/contentful";
 
 export default async function Page() {
 
-  const { data } = await axios.post(`${process.env.VERCEL_URL}/api/contentful`, {
-    query: gql`
-      query {
-        exerciseSessionCollection {
-          items {
-            sessionName
-            sys {
-              id
-            }
-            landingImage {
-              title
-              url
-              width
-              height
-            }
-            imageXPosition
-            imageYPosition
+  const data = await getContentful(gql`
+    query {
+      exerciseSessionCollection {
+        items {
+          sessionName
+          sys {
+            id
           }
+          landingImage {
+            title
+            url
+            width
+            height
+          }
+          imageXPosition
+          imageYPosition
         }
       }
-    `
-  });
+    }
+  `);
+
   const exerciseSessions = data.exerciseSessionCollection.items;
 
   return <>

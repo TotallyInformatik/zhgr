@@ -2,6 +2,7 @@ import axios from "axios";
 import gql from "graphql-tag";
 import styles from "./page.module.css";
 import Link from "next/link";
+import { getContentful } from "@/lib/contentful";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   //return <div>My Post: {params.slug}</div>
@@ -44,9 +45,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     }
   }`;
 
-  const { data } = await axios.post(`${process.env.VERCEL_URL}/api/contentful`, {
-    query: query,
-  });
+  const data = await getContentful(query);
 
   const exerciseSessionData = data.exerciseSession;
   const weeksData = data.weekCollection;

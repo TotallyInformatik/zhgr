@@ -21,7 +21,7 @@ export default function RootLayout({
       </Head>
       <body>
         <header>
-          <a className="logo" href={process.env.VERCEL_URL}>zhgr.</a>
+          <a className="logo" href="/">zhgr.</a>
           <ul>
             <li>
               <Link href="https://discord.gg/eth-dinfk">
