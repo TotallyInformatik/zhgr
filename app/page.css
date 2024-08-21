@@ -19,11 +19,50 @@
 }
 .session-grid {
   padding-block: 50px;
-  width: 50%;
+  width: 55%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: end;
   justify-content: center;
   gap: 50px;
+}
+.to-be-continued {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+}
+.to-be-continued .svg-container {
+  cursor: pointer;
+  position: relative;
+  width: max-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.to-be-continued .svg-container svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotateX(0deg) translateY(0%);
+  transition: all 0.3s ease-in-out;
+}
+.to-be-continued .svg-container::after {
+  display: block;
+  content: "more in the future.";
+  font-weight: 350;
+  font-family: "Inter";
+  opacity: 0;
+  transform: rotateX(90deg) translateY(50%);
+  transition: all 0.3s ease-in-out;
+}
+.to-be-continued .svg-container:hover svg {
+  transform: translateX(-50%) rotateX(90deg) translateY(-50%);
+  opacity: 0;
+}
+.to-be-continued .svg-container:hover::after {
+  transform: rotateX(0deg) translateY(0%);
+  opacity: 1;
 }

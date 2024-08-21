@@ -1,8 +1,34 @@
 import "./page.css"
-import { CourseCard } from "./../components/index"
-import testImage from "./../public/testImage.jpg";
+import { CourseCard } from "../components/index"
+import image from "./../public/moreToCome.jpg";
+import axios from "axios";
+import gql from "graphql-tag";
+import Image from "next/image";
 
-export default function Home() {
+export default async function Page() {
+
+  const { data } = await axios.post(`${process.env.VERCEL_URL}/api/contentful`, {
+    query: gql`
+      query {
+        exerciseSessionCollection {
+          items {
+            sessionName
+            sys {
+              id
+            }
+            landingImage(preview: false) {
+              title
+              url
+              width
+              height
+            }
+          }
+        }
+      }
+    `
+  });
+  const exerciseSessions = data.exerciseSessionCollection.items;
+
   return <>
     <div className="wrapper">
       <div className="flex">
@@ -13,11 +39,23 @@ export default function Home() {
           </p>
         </section>
         <section className="session-grid">
-          <CourseCard 
-            img={testImage}
-            title={"Algorithms & Datastructures"} 
-            link="sessions/dsa"
-          />
+          {
+            exerciseSessions.map((item: any) => {
+              return <CourseCard 
+                id={item.sys.id}
+                sessionName={item.sessionName}
+                imgTitle={item.landingImage.title}
+                imgUrl={item.landingImage.url}
+                imgWidth={item.landingImage.width}
+                imgHeight={item.landingImage.height}
+              />
+            })
+          }
+          <div className="to-be-continued">
+            <div className="svg-container">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,96a32,32,0,1,0,32,32A32,32,0,0,0,128,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,128,144ZM48,96a32,32,0,1,0,32,32A32,32,0,0,0,48,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,48,144ZM208,96a32,32,0,1,0,32,32A32,32,0,0,0,208,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,208,144Z"></path></svg>
+            </div>
+          </div>
         </section>
       </div>
     </div> 

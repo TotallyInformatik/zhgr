@@ -6,9 +6,12 @@ import { useRouter } from 'next/navigation'
 import Image, { StaticImageData } from "next/image"
 
 export const CourseCard = (p: {
-  title: string,
-  link: string,
-  img: StaticImageData | null
+  id: string,
+  sessionName: string,
+  imgTitle: string,
+  imgUrl: string,
+  imgWidth: number,
+  imgHeight: number,
 }) => {
 
   const router = useRouter();
@@ -17,15 +20,17 @@ export const CourseCard = (p: {
     <section 
       className={styles.card}
       onClick={() => {
-        router.push('/' + p.link, { scroll: false });
+        router.push('/sessions/' + p.id, { scroll: false });
       }}
-      title={p.title}
+      title={p.sessionName}
       >
       {
-        p.img && <Image 
+        p.imgUrl && <Image 
           className={styles.image}
-          src={p.img}
-          alt={p.title}
+          src={p.imgUrl}
+          alt={p.imgTitle}
+          width={p.imgWidth}
+          height={p.imgHeight}
         />
       }
     </section>
