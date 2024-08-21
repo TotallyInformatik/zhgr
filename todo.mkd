@@ -2,4 +2,4 @@
 
 - create normal website
 - create subscription with exercises
-- fix favicon.
+- make header invert color 

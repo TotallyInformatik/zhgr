@@ -3,7 +3,7 @@
 import styles from "./component.module.css"
 
 import { useRouter } from 'next/navigation'
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 
 export const CourseCard = (p: {
   id: string,
@@ -12,6 +12,8 @@ export const CourseCard = (p: {
   imgUrl: string,
   imgWidth: number,
   imgHeight: number,
+  imgXPosition: number,
+  imgYPosition: number
 }) => {
 
   const router = useRouter();
@@ -31,6 +33,9 @@ export const CourseCard = (p: {
           alt={p.imgTitle}
           width={p.imgWidth}
           height={p.imgHeight}
+          style={{
+            objectPosition: `${p.imgXPosition} ${p.imgYPosition}`
+          }}
         />
       }
     </section>

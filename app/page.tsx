@@ -1,9 +1,7 @@
 import "./page.css"
 import { CourseCard } from "../components/index"
-import image from "./../public/moreToCome.jpg";
 import axios from "axios";
 import gql from "graphql-tag";
-import Image from "next/image";
 
 export default async function Page() {
 
@@ -16,12 +14,14 @@ export default async function Page() {
             sys {
               id
             }
-            landingImage(preview: false) {
+            landingImage {
               title
               url
               width
               height
             }
+            imageXPosition
+            imageYPosition
           }
         }
       }
@@ -42,12 +42,15 @@ export default async function Page() {
           {
             exerciseSessions.map((item: any) => {
               return <CourseCard 
+                key={item.sys.id}
                 id={item.sys.id}
                 sessionName={item.sessionName}
                 imgTitle={item.landingImage.title}
                 imgUrl={item.landingImage.url}
                 imgWidth={item.landingImage.width}
                 imgHeight={item.landingImage.height}
+                imgXPosition={item.imageXPosition}
+                imgYPosition={item.imageYPosition}
               />
             })
           }

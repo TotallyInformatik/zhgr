@@ -1,4 +1,8 @@
 
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
 .flex {
   display: flex;
   align-items: center;
@@ -18,7 +22,7 @@
   border-bottom: 3px black solid;
 }
 .session-grid {
-  padding-block: 50px;
+  padding-block: var(--standard-gap);
   width: 55%;
   height: 100%;
   display: flex;
@@ -65,4 +69,23 @@
 .to-be-continued .svg-container:hover::after {
   transform: rotateX(0deg) translateY(0%);
   opacity: 1;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .flex {
+    flex-direction: column;
+    align-items: start;
+  }
+  .introduction, .introduction h1 {
+    width: fit-content;
+  }
+  .introduction h1 {
+    font-size: 3.5rem;
+    line-height: 3rem;
+  }
+  .session-grid {
+    width: 100%;
+    gap: 20px;
+  }
 }

@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     query: json.query
   });
 
-  console.log(data.exerciseSessionCollection.items);
+  console.log(data);
   return NextResponse.json(data, { status: 200 });
 
 }
