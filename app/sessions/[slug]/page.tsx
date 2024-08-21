@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <li>{exerciseSessionData.location}</li>
             {
               exerciseSessionData.utilLinks.map((item: any) => {
-                return <li><Link key={item.title} href={item.link}>{item.title}</Link></li>;
+                return <li key={item.title}><Link href={item.link}>{item.title}</Link></li>;
               })
             }
           </ul>
