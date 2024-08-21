@@ -2,32 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'Inter';
+  src: url('../public/fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf');
+  src: url('../public/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf');
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: 'Serif';
+  src: url('../public/fonts/Noto_Serif/NotoSerif-Italic-VariableFont_wdth\,wght.ttf');
+  src: url('../public/fonts/Noto_Serif/NotoSerif-VariableFont_wdth\,wght.ttf');
+  font-style: normal;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(255, 255, 255);
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+p {
+  font-size: 1.3rem;
+}
+
+footer {
+  position: relative;
+  bottom: 0px;
+  left: -50%;
+  width: 200vw;
+  height: 100px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+footer span {
+  font-size: 5rem;
+  line-height: 5.2rem;
+  text-wrap: nowrap;
+  font-weight: 400;
+  opacity: 0.07;
+}
+
+
+header {
+  width: 100vw;
+  height: 100px;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 50px;
+}
+header ul {
+  display: flex; 
+  align-items: center;
+  gap: 50px;
+}
+header ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .logo {
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: "Serif";
+}
+
+main {
+  padding: 50px;
+  position: relative;
+  min-height: calc(100vh - 200px);
+  display:grid;
+  grid-template-columns: 100%;
 }

@@ -1,0 +1,29 @@
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.introduction {
+  width: 340px; 
+  padding-bottom: 40px;
+}
+.introduction h1 { 
+  font-size: 5rem;
+  line-height: 5.5rem;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  width: min-content;
+  border-bottom: 3px black solid;
+}
+.session-grid {
+  padding-block: 50px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 50px;
+}

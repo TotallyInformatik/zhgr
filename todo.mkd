@@ -1,0 +1,5 @@
+# TODO:
+
+- create normal website
+- create subscription with exercises
+- fix favicon.
