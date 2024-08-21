@@ -61,14 +61,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <li>{exerciseSessionData.location}</li>
             {
               exerciseSessionData.utilLinks.map((item: any) => {
-                return <li><Link href={item.link}>{item.title}</Link></li>;
+                return <li><Link key={item.title} href={item.link}>{item.title}</Link></li>;
               })
             }
           </ul>
         </article>
       </aside>
       <section className={styles.weeks}>
-        
+
       </section>
     </section>
   </>;

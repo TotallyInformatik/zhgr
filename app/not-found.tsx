@@ -13,7 +13,7 @@ export default function Page() {
   useEffect(() => {
 
     setMessage(NOT_FOUND_SENTENCES[Math.floor(Math.random() * length)]);
-  })
+  }, []);
 
   return <>
   <div className={styles.wrapper}>
