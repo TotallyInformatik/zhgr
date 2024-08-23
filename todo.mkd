@@ -3,3 +3,4 @@
 - create normal website
 - create subscription with exercises
 - make header invert color 
+- change marker color to neon yellow. Green is ugly fr.

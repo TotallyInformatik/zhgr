@@ -4,16 +4,12 @@ import styles from "./component.module.css"
 
 import { useRouter } from 'next/navigation'
 import Image from "next/image"
+import { img } from "@/lib/types"
 
 export const CourseCard = (p: {
   id: string,
   sessionName: string,
-  imgTitle: string,
-  imgUrl: string,
-  imgWidth: number,
-  imgHeight: number,
-  imgXPosition: number,
-  imgYPosition: number
+  img: img,
 }) => {
 
   const router = useRouter();
@@ -25,16 +21,16 @@ export const CourseCard = (p: {
         router.push('/sessions/' + p.id, { scroll: false });
       }}
       title={p.sessionName}
-      >
+    >
       {
-        p.imgUrl && <Image 
+        p.img && <Image 
           className={styles.image}
-          src={p.imgUrl}
-          alt={p.imgTitle}
-          width={p.imgWidth}
-          height={p.imgHeight}
+          src={p.img.url}
+          alt={p.img.title}
+          width={p.img.width}
+          height={p.img.height}
           style={{
-            objectPosition: `${p.imgXPosition} ${p.imgYPosition}`
+            objectPosition: `${p.img.xPosition} ${p.img.yPosition}`
           }}
         />
       }

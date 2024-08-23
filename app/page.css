@@ -59,11 +59,11 @@
   font-weight: 350;
   font-family: "Inter";
   opacity: 0;
-  transform: rotateX(90deg) translateY(50%);
+  transform: rotateX(90deg) translateY(100%);
   transition: all 0.3s ease-in-out;
 }
 .to-be-continued .svg-container:hover svg {
-  transform: translateX(-50%) rotateX(90deg) translateY(-50%);
+  transform: translateX(-50%) rotateX(90deg) translateY(-100%);
   opacity: 0;
 }
 .to-be-continued .svg-container:hover::after {

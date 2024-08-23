@@ -45,12 +45,14 @@ export default async function Page() {
                 key={item.sys.id}
                 id={item.sys.id}
                 sessionName={item.sessionName}
-                imgTitle={item.landingImage.title}
-                imgUrl={item.landingImage.url}
-                imgWidth={item.landingImage.width}
-                imgHeight={item.landingImage.height}
-                imgXPosition={item.imageXPosition}
-                imgYPosition={item.imageYPosition}
+                img={{
+                  title: item.landingImage.title,
+                  url: item.landingImage.url,
+                  width: item.landingImage.width,
+                  height: item.landingImage.height,
+                  xPosition: item.imageXPosition,
+                  yPosition: item.imageYPosition
+                }}
               />
             })
           }

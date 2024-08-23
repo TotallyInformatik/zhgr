@@ -2,20 +2,43 @@
 
 
 .wrapper {
-  padding: var(--standard-gap) 0;
-  display: flex;
-  width: 100%;
+  align-self: center;
+  width: 80%;
   height: 100%;
-  gap: 100px;
+  gap: 300px;
+  margin-top: 100px;
 }
-.landingSection article {
-  width: 300px;
+.landingSection {
+  gap: 100px;
+  height: min-content;
+  width: 100%;
+  margin-bottom: 100px;
+  position: relative;
+}
+.landingSection h1 {
+  border: none;
+  padding: 0;
+}
+
+
+.landingSection img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.landingSection article ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 50px;
 }
 .landingSection article a {
   width: fit-content;
 }
 .landingSection article li {
-  margin-block: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .heading {
@@ -24,9 +47,10 @@
   margin-bottom: 20px;
   width: fit-content;
   line-height: 4rem;
-  border-bottom: 3px black solid;
 }
 .weeks {
+  margin-bottom: 100px;
   display: grid;
-  gap: var(--standard-gap);
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
 }
