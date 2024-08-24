@@ -51,8 +51,8 @@ export const WeekCard = (p: {
                     <p>{item.exercises}</p>
                     <div className={styles.stars}>
                       {
-                        [...Array(item.rating)].map((_) => {
-                          return <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256"><path d="M211,103.43l-70.13,28,49.47,63.61a8,8,0,1,1-12.63,9.82L128,141,78.32,204.91a8,8,0,0,1-12.63-9.82l49.47-63.61L45,103.43A8,8,0,0,1,51,88.57l69,27.61V40a8,8,0,0,1,16,0v76.18l69-27.61A8,8,0,1,1,211,103.43Z"></path></svg>;
+                        [...Array(item.rating)].map((_, i) => {
+                          return <svg key={i} xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256"><path d="M211,103.43l-70.13,28,49.47,63.61a8,8,0,1,1-12.63,9.82L128,141,78.32,204.91a8,8,0,0,1-12.63-9.82l49.47-63.61L45,103.43A8,8,0,0,1,51,88.57l69,27.61V40a8,8,0,0,1,16,0v76.18l69-27.61A8,8,0,1,1,211,103.43Z"></path></svg>;
                         })
                       }
                     </div>
@@ -71,8 +71,8 @@ export const WeekCard = (p: {
           <section className={styles.files}>
           <h3>Files</h3>
             { 
-                p.files.map((item) => {
-                  return <Link key={item.url} href={item.url}>{item.title}</Link>
+                p.files.map((item, i) => {
+                  return <Link key={i} href={item.url}>{item.title}</Link>
                 })
             }
           </section>
