@@ -1,12 +1,11 @@
-import Image from "next/image"
+
 import styles from "./component.module.css"
-import paper from "./../../public/paper2.jpg"
-import { img } from "@/lib/types"
 import Link from "next/link"
 
 export const WeekCard = (p: {
   title: string,
   date: string,
+  description: string,
   priorityRating: {
     exercises: string,
     rating: number,
@@ -14,30 +13,30 @@ export const WeekCard = (p: {
   }[],
   files: {
     title: string,
-    url: string
+    url: string,
+    fileName: string
   }[],
-  img: img
+  links: {
+    title: string,
+    url: string
+  }[]
 }) => {
 
   const dateParts = p.date.split("T")[0].split("-");
   const date = dateParts.reverse().join(".");
 
   return <section className={styles.card}> 
-    { 
-    /*
-    p.img && <Image 
-        alt={p.img.title}
-        src={p.img.url}
-        width={p.img.width}
-        height={p.img.height}
-      />
-      */
-    }
     <article>
       <section>
-        <h2>{p.title}</h2>
-        <p>{date}</p>
+        <section className={styles.heading}>
+          <h2>{p.title}</h2>
+          <p className={styles.date}>{date}</p>
+        </section>
+        <p className={styles.description}>
+          {p.description}
+        </p>
       </section>
+      <section className={styles.content}>
       {
         p.priorityRating && 
         <>
@@ -66,18 +65,26 @@ export const WeekCard = (p: {
         </>
       }
       {
-        p.files.length != 0 && 
+        (p.files.length != 0 || p.links.length != 0) && 
         <>
           <section className={styles.files}>
-          <h3>Files</h3>
+          <h3>Materials</h3>
+          <ul>
             { 
-                p.files.map((item, i) => {
-                  return <Link key={i} href={item.url}>{item.title}</Link>
-                })
+              p.files.map((item, i) => {
+                return <li key={i}><Link href={item.url} title={item.fileName}>{item.title}</Link></li>
+              })
             }
+            {
+              p.links.map((item, i) => {
+                return <li key={i}><Link href={item.url}>{item.title}</Link></li>
+              })
+            }
+          </ul>
           </section>
         </>
       }
+      </section>
     </article>
   </section>;
 

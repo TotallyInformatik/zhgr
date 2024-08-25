@@ -1,6 +1,5 @@
 import "./page.css"
 import { CourseCard } from "../components/index"
-import axios from "axios";
 import gql from "graphql-tag";
 import { getContentful } from "@/lib/contentful";
 
@@ -33,9 +32,9 @@ export default async function Page() {
     <div className="wrapper">
       <div className="flex">
         <section className="introduction">
-          <h1>Exercise Sessions</h1>
+          <h1>Exercise Classes</h1>
           <p>
-            The page(s) on the right contain slides and summaries of my exercise sessions.
+            The following page(s) contain slides and summaries of my exercise sessions.
           </p>
         </section>
         <section className="session-grid">

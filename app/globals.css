@@ -9,6 +9,7 @@
   --highlighter-2: rgba(17, 255, 0, 0.55);
   --standard-gap: 50px;
   --standard-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
+  --unimportant-opacity: 0.6;
 }
 
 
@@ -112,7 +113,9 @@ header {
   justify-content: space-between;
   padding-inline: var(--standard-gap);
   position: fixed;
-  z-index: 2;
+  z-index: 99999;
+  color: white;
+  mix-blend-mode: difference;
   top: 0;
   left: 0;
 }

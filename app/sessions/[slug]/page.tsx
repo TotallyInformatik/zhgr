@@ -31,19 +31,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
       items {
         title
         date
+        description
         mediaCollection {
           items {
+            fileName
             title
             url
           }
         }
+        links
         priorityRating
-        titleImage {
-          title
-          url
-          width
-          height
-        }
       }
     }
   }`;
@@ -55,19 +52,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const weeksData = data.weekCollection.items;
   console.log(weeksData);
 
+  // TODO: replace with a grid of squares, when clicking on them, you are guided to the latex document
+  // TODO: of that exercise session.
+  // TODO: change page padding to be uniform and same as homepage
+
   return <>
     <section className={styles.wrapper}>
       <section className={styles.landingSection}>
-        <section>
-          <h1 className={styles.heading}>{exerciseSessionData.sessionName}</h1>
-          <Image
-            alt={image.title}
-            src={image.url}
-            width={image.width}
-            height={image.height}
-          />
-        </section>
-        <article>
+        <h1 className={styles.heading}>{exerciseSessionData.sessionName}</h1>
+        <Image
+          alt={image.title}
+          src={image.url}
+          width={image.width}
+          height={image.height}
+        />
+        <article className={styles.information}>
           <ul>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#000000" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path></svg>
@@ -96,17 +95,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
             return <WeekCard
               key={item.title}
               title={item.title}
+              description={item.description}
               date={item.date}
               priorityRating={item.priorityRating}
               files={item.mediaCollection.items}
-              img={item.titleImage && {
-                title: item.titleImage.title,
-                url: item.titleImage.url,
-                width: item.titleImage.width,
-                height: item.titleImage.height,
-                xPosition: "",
-                yPosition: "",
-              }}
+              links={item.links || []}
             />;
           })
         }
