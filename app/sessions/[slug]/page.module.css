@@ -49,9 +49,26 @@
 }
 
 
-@media screen and (max-width: 1000px) {
-  .wrapper {
-    width: 100%;
-    margin-top: 0px;
+@media screen and (max-width: 1400px) {
+  .weeks {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .weeks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .weeks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .weeks {
+    grid-template-columns: 1fr;
   }
 }
