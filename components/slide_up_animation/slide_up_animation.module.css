@@ -1,0 +1,19 @@
+.outerSpan {
+  overflow: hidden;
+  display: flex;
+}
+
+.innerSpan {
+  height: 100%;
+  animation: 0.7s ease 0s slideUp forwards;
+  transform: translateY(100%);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

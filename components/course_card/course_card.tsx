@@ -1,10 +1,10 @@
 'use client'
 
-import styles from "./component.module.css"
+import styles from "./course_card.module.css"
 
 import { useRouter } from 'next/navigation'
 import Image from "next/image"
-import { img } from "@/lib/types"
+import { img } from "@/lib"
 
 export const CourseCard = (p: {
   id: string,
@@ -24,6 +24,7 @@ export const CourseCard = (p: {
     >
       {
         p.img && <Image 
+          priority
           className={styles.image}
           src={p.img.url}
           alt={p.img.title}

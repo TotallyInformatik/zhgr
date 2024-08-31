@@ -4,24 +4,30 @@
 }
 .landingSection {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  column-gap: 75px;
+  row-gap: 40px;
   height: min-content;
   width: 100%;
 }
 .landingSection h1 {
+  padding-bottom: 10px;
+  width: max-content;
   border-bottom: var(--standard-underline);
 }
 
-.landingSection .information {
-  margin-top: 20px;
+.landingSection h1 span {
+  text-wrap: nowrap;
 }
 
 .landingSection .information ul {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 150px;
+  animation: var(--standard-animation);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
   row-gap: 20px;
-  margin-bottom: var(--standard-gap);
 }
 .landingSection .information a {
   width: fit-content;
@@ -35,11 +41,11 @@
 .heading {
   font-weight: 410;
   padding-bottom: 15px;
-  margin-bottom: 20px;
   width: fit-content;
   line-height: 4rem;
 }
 .weeks {
+  animation: var(--standard-animation);
   margin-block: 100px;
   display: grid;
   width: 100%;
@@ -53,6 +59,13 @@
   .weeks {
     grid-template-columns: repeat(5, 1fr);
   }
+
+  .landingSection .information ul {
+    display: flex;
+    column-gap: 70px;
+    flex-wrap: wrap;
+  }
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -61,10 +74,22 @@
   }
 }
 
+@media screen and (max-width: 960px) {
+  .landingSection {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .weeks {
     grid-template-columns: repeat(2, 1fr);
   }
+  .landingSection h1 {
+    font-size: 7vw;
+    line-height: 9vw;
+  }
+  
 }
 
 @media screen and (max-width: 430px) {

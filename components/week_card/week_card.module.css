@@ -1,0 +1,34 @@
+
+
+.card {
+  aspect-ratio: 1/1;
+  background-color: rgb(238, 238, 238);
+  position: relative;
+  opacity: var(--unimportant-opacity);
+  cursor: pointer;
+  overflow: hidden;
+  contain: paint;
+}
+.week {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+}
+.title {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+.hoverEffect {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--highlighter-1);
+  transform: translateX(100%);
+}
+
+

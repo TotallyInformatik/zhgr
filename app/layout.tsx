@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Head from "next/head";
 import Link from "next/link";
+import { Footer, SlideUpAnimation } from "@/components";
 
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <Head>
@@ -46,9 +48,7 @@ export default function RootLayout({
         <main>
           {children}
         </main>
-        <footer>
-          <span>website by rui. website by rui. website by rui. website by rui. website by rui. website by rui. website by rui. website by rui. website by rui. </span>
-        </footer>
+        <Footer/>
       </body>
     </html>
   );

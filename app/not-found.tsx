@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "./not-found.module.css"
 import { useEffect, useState } from "react";
-import { NOT_FOUND_SENTENCES } from "./../lib/404Sentences";
+import { NOT_FOUND_SENTENCES } from "@/lib";
 
 export default function Page() {
   

@@ -1,9 +1,8 @@
 import gql from "graphql-tag";
 import styles from "./page.module.css";
 import Link from "next/link";
-import { getContentful } from "@/lib/contentful";
-import { WeekCard } from "@/components";
-import Image from "next/image";
+import { getContentful } from "@/lib";
+import { LINE_DELAY, SlideUpAnimation, WeekCard } from "@/components";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   //return <div>My Post: {params.slug}</div>
@@ -42,18 +41,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const data = await getContentful(query);
 
   const exerciseSessionData = data.exerciseSession;
-  const image = exerciseSessionData.landingImage;
   const weeksData = data.weekCollection.items;
-  console.log(weeksData);
-
-  // TODO: replace with a grid of squares, when clicking on them, you are guided to the latex document
-  // TODO: of that exercise session.
-  // TODO: change page padding to be uniform and same as homepage
+  const sessionName: string[] = exerciseSessionData.sessionName.split("\\")
 
   return <>
     <section className={styles.wrapper}>
       <section className={styles.landingSection}>
-        <h1 className={styles.heading}>{exerciseSessionData.sessionName}</h1>
+        <h1 className={styles.heading}>
+          {
+            sessionName.map((item: string, index) => {
+              return <SlideUpAnimation millisecondsInMs={index*LINE_DELAY} key={index}>
+                {item}
+              </SlideUpAnimation>
+            })
+          }
+        </h1>
         <article className={styles.information}>
           <ul>
             <li>
@@ -76,7 +78,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
             }
           </ul>
         </article>
-        <section className={styles.content}>
+      </section>
+      <section className={styles.content}>
           <section className={styles.weeks}>
             {
               weeksData.map((item: any, index: number) => {
@@ -91,7 +94,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
             }
           </section>
         </section>
-      </section>
     </section>
   </>;
 
