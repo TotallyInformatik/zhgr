@@ -1,7 +1,38 @@
-
+'use client'
+import { useRouter } from "next/navigation";
 import styles from "./component.module.css"
-import Link from "next/link"
 
+
+export const WeekCard = (p: {
+  title: string,
+  date: string,
+  week: string, // should usually be a number
+  fileUrl: string
+}) => {
+
+  const dateParts = p.date.split("T")[0].split("-");
+  const date = dateParts.reverse().join(".");
+  const router = useRouter();
+  const title = p.title || "Coming Soon";
+
+  return <section 
+    className={styles.card} 
+    title={`${date} - ${title}`} 
+    onClick={() => {
+      if (p.fileUrl != null) {
+        router.push(p.fileUrl);
+      }
+    }}
+  >
+    <h2 className={styles.week}>{p.week}</h2>
+    <p className={styles.title}>{title}</p>
+  </section>
+
+}
+
+/// old code
+
+/*
 export const WeekCard = (p: {
   title: string,
   date: string,
@@ -89,3 +120,4 @@ export const WeekCard = (p: {
   </section>;
 
 }
+*/

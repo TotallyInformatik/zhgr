@@ -31,16 +31,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
       items {
         title
         date
-        description
-        mediaCollection {
-          items {
-            fileName
-            title
-            url
-          }
+        week
+        file {
+          url
         }
-        links
-        priorityRating
       }
     }
   }`;
@@ -60,12 +54,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <section className={styles.wrapper}>
       <section className={styles.landingSection}>
         <h1 className={styles.heading}>{exerciseSessionData.sessionName}</h1>
-        <Image
-          alt={image.title}
-          src={image.url}
-          width={image.width}
-          height={image.height}
-        />
         <article className={styles.information}>
           <ul>
             <li>
@@ -88,21 +76,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
             }
           </ul>
         </article>
-      </section>
-      <section className={styles.weeks}>
-        {
-          weeksData.map((item: any) => {
-            return <WeekCard
-              key={item.title}
-              title={item.title}
-              description={item.description}
-              date={item.date}
-              priorityRating={item.priorityRating}
-              files={item.mediaCollection.items}
-              links={item.links || []}
-            />;
-          })
-        }
+        <section className={styles.content}>
+          <section className={styles.weeks}>
+            {
+              weeksData.map((item: any, index: number) => {
+                return <WeekCard 
+                  key={index}
+                  title={item.title}
+                  date={item.date}
+                  week={item.week}
+                  fileUrl={item.file && item.file.url}
+                />
+              })
+            }
+          </section>
+        </section>
       </section>
     </section>
   </>;

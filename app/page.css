@@ -24,7 +24,7 @@
   margin-bottom: 20px;
   padding-bottom: 15px;
   width: min-content;
-  border-bottom: 3px black solid;
+  border-bottom: var(--standard-underline);
 }
 
 .session-grid {

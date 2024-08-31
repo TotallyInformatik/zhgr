@@ -11,13 +11,12 @@ export default function Page() {
   const length = NOT_FOUND_SENTENCES.length;
 
   useEffect(() => {
-
     setMessage(NOT_FOUND_SENTENCES[Math.floor(Math.random() * length)]);
   }, []);
 
   return <>
   <div className={styles.wrapper}>
-    <h1><Link href="https://www.youtube.com/watch?v=Aq5WXmQQooo">
+    <h1><Link href="https://www.youtube.com/watch?v=Aq5WXmQQooo" className={styles.link}>
         {message}
       </Link></h1>
   </div>
