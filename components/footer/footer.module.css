@@ -14,7 +14,8 @@
   animation: 1s ease 0s fadeInFooter;
   position: relative;
   bottom: 0px;
-  width: 200vw;
+  width: 100vw;
+  contain: paint;
   height: var(--footer-height);
   overflow-y: hidden;
   overflow-x: hidden;
