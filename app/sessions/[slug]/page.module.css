@@ -44,21 +44,9 @@
   width: fit-content;
   line-height: 4rem;
 }
-.weeks {
-  animation: var(--standard-animation);
-  margin-block: 100px;
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 20px;
-  flex-wrap: wrap;
-}
 
 
 @media screen and (max-width: 1400px) {
-  .weeks {
-    grid-template-columns: repeat(5, 1fr);
-  }
 
   .landingSection .information ul {
     display: flex;
@@ -66,12 +54,6 @@
     flex-wrap: wrap;
   }
 
-}
-
-@media screen and (max-width: 1200px) {
-  .weeks {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 @media screen and (max-width: 960px) {
@@ -82,18 +64,10 @@
 }
 
 @media screen and (max-width: 600px) {
-  .weeks {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
   .landingSection h1 {
     font-size: 7vw;
     line-height: 9vw;
   }
   
-}
-
-@media screen and (max-width: 430px) {
-  .weeks {
-    grid-template-columns: 1fr;
-  }
 }

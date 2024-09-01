@@ -1,0 +1,77 @@
+.weeks {
+  animation: var(--standard-animation);
+  margin-block: 100px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(7, 1fr);
+  flex-wrap: wrap;
+  position: relative;
+  background-color: white;
+  z-index: 2;
+}
+
+.card {
+  aspect-ratio: 1/1;
+  background-color: rgb(238, 238, 238, var(--unimportant-opacity));
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  border: 5px solid white;
+  transition: background-color 0.25s ease;
+}
+
+
+.card:hover .week, .card:hover .title {
+  opacity: 1;
+}
+.card:hover {
+  background-color: transparent;
+}
+.week, .title {
+  position: absolute;
+  z-index: 2;
+  opacity: var(--unimportant-opacity);
+  transition: opacity 0.25s ease;
+}
+.week {
+  top: 20px;
+  left: 20px;
+}
+.title {
+  bottom: 20px;
+  right: 20px;
+}
+
+.hoverEffect {
+  position: absolute;
+  z-index: 0;
+  background-color: var(--highlighter-1);
+  transition: transform 0.15s ease 
+              opacity 0.15s ease;
+}
+
+
+@media screen and (max-width: 1400px) {
+  .weeks {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .weeks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .weeks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+@media screen and (max-width: 430px) {
+  .weeks {
+    grid-template-columns: 1fr;
+  }
+}

@@ -6,12 +6,10 @@ export const Footer = () => {
 
   const currentYear = new Date().getFullYear()
   const credits = `© ${currentYear} website by rui zhang at eth zurich. some logos by phosphor icons. `
-  const repeatedCredits = credits.repeat(2);
+  const repeatedCredits = credits.repeat(20);
 
   const span1 = useRef<any>(null!);
   const span2 = useRef<any>(null!);
-
-  // TODO: make this actually work.
 
   const scrollAnimation = () => {
     const spanWidth = span1.current.scrollWidth;
@@ -30,7 +28,7 @@ export const Footer = () => {
   };
 
   useEffect(() => {
-    scrollAnimation();
+    scrollAnimation();  
   })
 
   return <footer className={styles.footer}>

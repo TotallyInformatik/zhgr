@@ -1,14 +1,17 @@
 'use client'
 import { useRouter } from "next/navigation";
 import styles from "./week_card.module.css"
-import { useRef, useState } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
+import { motion } from "framer-motion";
+
 
 
 export const WeekCard = (p: {
   title: string,
   date: string,
   week: string, // should usually be a number
-  fileUrl: string
+  fileUrl: string,
+  index: number,
 }) => {
 
   const dateParts = p.date.split("T")[0].split("-");
@@ -63,6 +66,7 @@ export const WeekCard = (p: {
     //  setXSpeed(Math.abs(e.movementX));
     //  setYSpeed(Math.abs(e.movementY));
     //}}
+    /*
     onMouseEnter={(e) => {
       switch (determineDirection(e)) {
         case "top": 
@@ -119,8 +123,7 @@ export const WeekCard = (p: {
           break;
       }
     }}
-
-
+    */
     className={styles.card} 
     title={`${date} - ${title}`} 
     onClick={() => {
@@ -129,7 +132,14 @@ export const WeekCard = (p: {
       }
     }}
   >
-    <div className={styles.hoverEffect} ref={ref} />
+    {
+      <motion.div 
+        className={styles.hoverEffect} 
+        ref={ref} 
+        layoutId="hover"
+        transition={{ type: "spring", duration: 0.4 }}
+      />
+    }
     <h2 className={styles.week}>{p.week}</h2>
     <p className={styles.title}>{title}</p>
   </section>
