@@ -10,16 +10,28 @@
   z-index: 2;
 }
 
-.card {
-  aspect-ratio: 1/1;
-  background-color: rgb(238, 238, 238, var(--unimportant-opacity));
+.fillWrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  display: flex;
+}
+
+
+.card, .fill {
   position: relative;
-  cursor: pointer;
+  aspect-ratio: 1/1;
   z-index: 1;
+}
+.card {
+  background-color: rgb(238, 238, 238, var(--unimportant-opacity));
+  cursor: pointer;
   border: 5px solid white;
   transition: background-color 0.25s ease;
 }
-
 
 .card:hover .week, .card:hover .title {
   opacity: 1;
@@ -27,6 +39,12 @@
 .card:hover {
   background-color: transparent;
 }
+
+
+.fill {
+  background-color: white;
+}
+
 .week, .title {
   position: absolute;
   z-index: 2;

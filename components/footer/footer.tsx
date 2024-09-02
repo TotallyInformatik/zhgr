@@ -19,10 +19,10 @@ export const Footer = () => {
       const currentStyle1 = span1.current.style;
       const currentStyle2 = span2.current.style;
 
-      const newCurrentLeft1 = currentStyle1.left.replace("px", "") - 0.2;
+      const newCurrentLeft1 = currentStyle1.left.replace("px", "") - 0.1;
       currentStyle1.left = `${newCurrentLeft1}px`;
 
-      const newCurrentLeft2 = currentStyle2.left.trim("px") - 0.2;
+      const newCurrentLeft2 = currentStyle2.left.trim("px") - 0.1;
       currentStyle2.left = `${newCurrentLeft2}px`;
     }, 100);
   };

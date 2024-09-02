@@ -137,9 +137,23 @@ header ul li a {
 }
 header ul li a p {
   font-size: 1.05rem;
+  contain: paint;
+}
+header ul li a p::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  transition: width 0.2s ease;
+  height: 2px;
+  background-color: white;
 }
 header ul li a::before {
   display: none;
+}
+header ul li:hover p:after {
+  width: 100%
 }
 
 header .logo {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./not-found.module.css"
 import { useEffect, useState } from "react";
 import { NOT_FOUND_SENTENCES } from "@/lib";
+import { SlideUpAnimation } from "@/components";
 
 export default function Page() {
   
@@ -16,9 +17,9 @@ export default function Page() {
 
   return <>
   <div className={styles.wrapper}>
-    <h1><Link href="https://www.youtube.com/watch?v=Aq5WXmQQooo" className={styles.link}>
+    <Link href="https://www.youtube.com/watch?v=Aq5WXmQQooo" className={styles.link}>
         {message}
-      </Link></h1>
+    </Link>
   </div>
   </>
 }

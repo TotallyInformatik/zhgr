@@ -8,3 +8,9 @@
 .link::before {
   display: none;
 }
+.link {
+  text-align: center;
+  line-height: 2.8rem;
+  font-size: 3rem;
+  animation: var(--standard-animation)
+}

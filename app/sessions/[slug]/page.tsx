@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { getContentful } from "@/lib";
-import { LINE_DELAY, SlideUpAnimation, WeekCard } from "@/components";
+import { LINE_DELAY, SlideUpAnimation } from "@/components";
 import { WeekGrid } from "@/components";
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -82,26 +82,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </ul>
         </article>
       </section>
-      {
-        /*
-              <section className={styles.content}>
-        <section className={styles.weeks}>
-          {
-            weeksData.map((item: any, index: number) => {
-              return <WeekCard 
-                key={index}
-                title={item.title}
-                date={item.date}
-                week={item.week}
-                fileUrl={item.file && item.file.url}
-                index={index}
-              />
-            })
-          }
-        </section>
-      </section>
-        */
-      }
       {
         <WeekGrid weeksData={weeksData} />
       }
