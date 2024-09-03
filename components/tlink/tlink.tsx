@@ -38,7 +38,7 @@ export const TLink = ({
     setTimeout(function () {
       main.classList.remove("page-exit");
       footer.classList.remove("page-exit");
-    }, 900)
+    }, 950)
 
 
 
