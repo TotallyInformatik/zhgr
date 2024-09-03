@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getContentful } from "@/lib";
 import { LINE_DELAY, SlideUpAnimation } from "@/components";
 import { WeekGrid } from "@/components";
+import { notFound } from "next/navigation";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   //return <div>My Post: {params.slug}</div>
@@ -11,12 +12,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const query = gql`query {
     exerciseSession(id: "${params.slug}") {
       sessionName
-      landingImage {
-        title
-        url
-        width
-        height
-      }
       weekTime
       location
       utilLinks
@@ -42,10 +37,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const data = await getContentful(query);
 
   const exerciseSessionData = data.exerciseSession;
+  if (exerciseSessionData == null) {
+    notFound();
+  }
+
   const weeksData = data.weekCollection.items;
   const sessionName: string[] = exerciseSessionData.sessionName.split("\\")
-
-  //const [hoveredNavItem, setHoveredNavItem] = useState(-1);
 
   return <>
     <section className={styles.wrapper}>

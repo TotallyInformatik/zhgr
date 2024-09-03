@@ -34,9 +34,11 @@ export const TLink = ({
 
     setTimeout(function () {
       router.push(href)
+    }, 800)
+    setTimeout(function () {
       main.classList.remove("page-exit");
       footer.classList.remove("page-exit");
-    }, 800)
+    }, 900)
 
 
 

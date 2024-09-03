@@ -4,7 +4,6 @@ import styles from "./course_card.module.css"
 
 import Image from "next/image"
 import { img } from "@/lib"
-import Link from "next/link"
 import { TLink } from "../tlink"
 
 export const CourseCard = (p: {
@@ -17,7 +16,7 @@ export const CourseCard = (p: {
     <TLink 
       href={'/sessions/' + p.id}
       className={styles.card}
-      title={p.sessionName}
+      title={p.sessionName.replaceAll("\\", " ")}
     >
       {
         p.img && <Image 
