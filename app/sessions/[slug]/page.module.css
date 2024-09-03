@@ -21,6 +21,24 @@
   text-wrap: nowrap;
 }
 
+.utilLink {
+  position: relative;
+}
+.utilLink::before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: var(--highlighter-1);
+  top: 0;
+  left: -7px;
+  width: 5px;
+  height: 100%;
+  transition: width 0.7s cubic-bezier(.13,1.01,0,.98);
+}
+.utilLink:hover::before {
+  width: calc(100% + 14px);
+}
+
 .landingSection .information ul {
   animation: var(--standard-animation);
   display: grid;

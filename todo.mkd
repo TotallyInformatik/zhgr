@@ -1,6 +1,4 @@
 # TODO:
 
-- create normal website
-- create subscription with exercises
-- make header invert color 
-- change marker color to neon yellow. Green is ugly fr.
+- create subscription for emails
+- create better logo and animation for logo

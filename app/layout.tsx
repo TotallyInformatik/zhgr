@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Head from "next/head";
 import Link from "next/link";
-import { Footer, SlideUpAnimation } from "@/components";
+import { Footer, SlideUpAnimation, TLink } from "@/components";
 
 
 export const metadata: Metadata = {
-  title: "zhgr - exercise sessions",
+  title: "zhangrui - exercise sessions",
   description: "Rui Zhang - Teaching Assistant ETHZ",
 };
 
@@ -23,7 +23,9 @@ export default function RootLayout({
       </Head>
       <body>
         <header>
-          <a className="logo" href="/">zhgr.</a>
+          <TLink className="logo" href="/">
+            zhang|rui
+          </TLink>
           <ul>
             <li>
               <Link href="https://discord.gg/eth-dinfk">

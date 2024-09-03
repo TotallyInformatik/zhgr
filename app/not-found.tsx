@@ -4,7 +4,6 @@ import Link from "next/link";
 import styles from "./not-found.module.css"
 import { useEffect, useState } from "react";
 import { NOT_FOUND_SENTENCES } from "@/lib";
-import { SlideUpAnimation } from "@/components";
 
 export default function Page() {
   

@@ -2,9 +2,10 @@
 
 import styles from "./course_card.module.css"
 
-import { useRouter } from 'next/navigation'
 import Image from "next/image"
 import { img } from "@/lib"
+import Link from "next/link"
+import { TLink } from "../tlink"
 
 export const CourseCard = (p: {
   id: string,
@@ -12,14 +13,10 @@ export const CourseCard = (p: {
   img: img,
 }) => {
 
-  const router = useRouter();
-
   return <>
-    <section 
+    <TLink 
+      href={'/sessions/' + p.id}
       className={styles.card}
-      onClick={() => {
-        router.push('/sessions/' + p.id, { scroll: false });
-      }}
       title={p.sessionName}
     >
       {
@@ -35,7 +32,7 @@ export const CourseCard = (p: {
           }}
         />
       }
-    </section>
+    </TLink>
   </>
 }
 
