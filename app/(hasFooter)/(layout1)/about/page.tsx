@@ -13,11 +13,6 @@ export default function Page() {
   const iconSize = 40;
 
   const articleRef = useRef<any>();
-  useEffect(() => {
-    setInterval(function() {
-
-    }, 5000);
-  }, [])
 
 
   return <section className={styles.wrapper}> 
@@ -66,16 +61,19 @@ export default function Page() {
           className={styles.me}
           alt="picture of me"
           src={pic1}
+          layout="responsive"
         />
         <Image 
           className={styles.code}
           alt="horrendous code"
           src={pic2}
+          layout="responsive"
         />
         <Image 
           className={styles.starthack}
           alt="start hack participation 2024, where we won a case!"
           src={pic3}
+          layout="responsive"
         />
       </section>
     </section>

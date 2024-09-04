@@ -3,7 +3,7 @@
   margin-block: 100px;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   position: relative;
   background-color: white;
@@ -29,7 +29,7 @@
 .card {
   background-color: rgb(238, 238, 238, var(--unimportant-opacity));
   cursor: pointer;
-  border: 5px solid white;
+  border: 10px solid white;
   transition: background-color 0.25s ease;
 }
 
@@ -69,26 +69,24 @@
 }
 
 
-@media screen and (max-width: 1400px) {
-  .weeks {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
 @media screen and (max-width: 1200px) {
   .weeks {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .weeks {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    border: 5px solid white;
   }
   
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 630px) {
   .weeks {
     grid-template-columns: 1fr;
   }
