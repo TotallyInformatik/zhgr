@@ -45,20 +45,20 @@ export default function Page() {
     <section className={styles.content}>
       <article className={styles.article} ref={articleRef}>
         <p>
-          Hi, I'm Rui. I'm a computer science student at ETH Zurich in my third semester. 
+          Hi, I{"'"}m Rui. I{"'"}m a computer science student at ETH Zurich in my third semester. 
           Welcome to this website I created for my exercise classes at ETH.
         </p>
         <p>
-          I've always enjoyed learning and creating, especially in front of the computer, 
-          which is why I've always wanted to study computer science. 
+          I{"'"}ve always enjoyed learning and creating, especially in front of the computer, 
+          which is why I{"'"}ve always wanted to study computer science. 
         </p>
         <p>
-          In my free time I like to go out with friends and fool around, work on some other creative projects, or play some games 
+          In my free time I like to go out with friends, work on some other creative projects, or play some games 
           and pretend as if sitting around all day to study was not enough screen time already.
         </p>
         <p>
-          Feel free to reach out. Since you're probably an ETH student 
-          it'll likely be about the exercise sessions but I'm open to anything :).
+          Feel free to reach out. Since you{"'"}re probably an ETH student 
+          it{"'"}ll likely be about the exercise sessions but I{"'"}m open to anything :{")"}.
         </p>
       </article>
       <section className={styles.imageGallery}>
