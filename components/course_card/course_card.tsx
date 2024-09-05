@@ -5,6 +5,7 @@ import styles from "./course_card.module.css"
 import Image from "next/image"
 import { img } from "@/lib"
 import { TLink } from "../tlink"
+import { ImageLink } from "@/components"
 
 export const CourseCard = (p: {
   id: string,
@@ -12,9 +13,23 @@ export const CourseCard = (p: {
   img: img,
 }) => {
 
+  const courseName =p.sessionName.replaceAll("\\", " ");
+
   return <>
+    <ImageLink
+      href={'/classes/' + p.id}
+      className={styles.card}
+      imgUrl={p.img}
+      title={courseName}
+      subtitle={courseName}
+    />
+  </>
+}
+
+
+/*
     <TLink 
-      href={'/sessions/' + p.id}
+      href={'/classes/' + p.id}
       className={styles.card}
       title={p.sessionName.replaceAll("\\", " ")}
     >
@@ -32,7 +47,5 @@ export const CourseCard = (p: {
         />
       }
     </TLink>
-  </>
-}
-
+*/
 // ! The Idea is to have images that display the name of the exercise session.

@@ -28,7 +28,6 @@ export const TLink = ({
 
     if (main == null || footer == null) return 
 
-
     main.classList.add("page-exit");
     footer.classList.add("page-exit");
 

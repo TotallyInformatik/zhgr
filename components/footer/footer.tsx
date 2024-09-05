@@ -29,7 +29,7 @@ export const Footer = () => {
 
   useEffect(() => {
     scrollAnimation();  
-  })
+  }, [])
 
   return <footer className={styles.footer}>
     <span ref={span1}> { repeatedCredits } </span>

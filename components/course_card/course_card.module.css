@@ -1,32 +1,4 @@
 .card {
   width: 100%;
   height: fit-content;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  overflow: hidden;
-}
-.card:hover .image {
-  transform: scale(1.01);
-}
-
-.image {
-  transition: transform 0.2s ease;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  object-fit: cover;
-}
-
-@media screen and (max-width: 550px) {
-
-  .card {
-    height: fit-content;
-  }
-
-  .image {
-    object-fit: contain;
-  }
 }
