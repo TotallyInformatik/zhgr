@@ -13,12 +13,15 @@ export const CourseCard = (p: {
   img: img,
 }) => {
 
+  const courseName =p.sessionName.replaceAll("\\", " ");
+
   return <>
     <ImageLink
       href={'/classes/' + p.id}
       className={styles.card}
       imgUrl={p.img}
-      title={p.sessionName.replaceAll("\\", " ")}
+      title={courseName}
+      subtitle={courseName}
     />
   </>
 }

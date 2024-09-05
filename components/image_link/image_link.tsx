@@ -6,6 +6,7 @@ import Image, { StaticImageData } from "next/image"
 import { img } from "@/lib"
 import { TLink } from "../tlink"
 import { default as cn } from "classnames"
+import Link from "next/link"
 
 export const ImageLink = ({
   href,
@@ -15,7 +16,7 @@ export const ImageLink = ({
   className,
   subtitle,
 }: {
-  href: string
+  href?: string
   imgUrl?: img,
   imgSrc?: StaticImageData,
   title: string
@@ -23,16 +24,20 @@ export const ImageLink = ({
   subtitle?: string
 }) => {
 
+  const L = href === undefined ? Link : TLink;
+
+
   return <>
-    <TLink 
-      href={href}
-      className={cn(styles.card, className)}
+    <L 
+      href={href || ""}
+      className={cn(styles.card, className, href && styles.hasLink)}
       title={title}
     >
       <div>
         {
           imgUrl && <Image 
             priority
+            layout="responsive"
             className={styles.image}
             src={imgUrl.url}
             alt={imgUrl.title}
@@ -43,6 +48,7 @@ export const ImageLink = ({
         {
           imgSrc && <Image 
             priority
+            layout="responsive"
             className={styles.image}
             src={imgSrc}
             alt={title}
@@ -52,6 +58,6 @@ export const ImageLink = ({
       {
         subtitle && <p>{subtitle}</p>
       }
-    </TLink>
+    </L>
   </>
 }

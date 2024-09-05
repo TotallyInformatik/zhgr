@@ -1,31 +1,30 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
   position: relative;
 }
 .card div {
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.card p {
-  position: absolute;
-  bottom: -32px;
-  left: 4px;
-  font-size: 1.2rem;
-  opacity: var(--unimportant-opacity)
+.image img {
+  z-index: -1;
+  width: 100%;
+  object-fit: cover;
 }
-.card:hover .image {
+.hasLink {
+  cursor: pointer;
+}
+.hasLink .image {
+  transition: transform 0.2s ease;
+}
+.hasLink:hover .image {
   -webkit-transform:scale(0.9, 0.9);
   transform: scale(1.01);
 }
 
-.image {
-  transition: transform 0.2s ease;
-  z-index: -1;
-  object-fit: contain;
+.card p {
+  padding: 5px;
+  font-size: 1.2rem;
+  opacity: var(--unimportant-opacity)
 }

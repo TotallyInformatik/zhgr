@@ -1,56 +1,79 @@
-import Image from "next/image";
 import styles from "./page.module.css"
-import { ImageLink, LINE_DELAY, SlideUpAnimation } from "@/components";
-import ethhg from "@/public/ethhg.jpg"
-import classes from "@/public/classes.jpg"
-import studentvillage from "@/public/studentvillage.jpg"
-import polybahn from "@/public/polybahn.jpg"
+import { CourseCard, ImageLink, LINE_DELAY, SlideUpAnimation } from "@/components"
+import gql from "graphql-tag";
+import { getContentful } from "@/lib";
+import more from "@/public/more.jpg"
 
-export default function Page() {
+export default async function Page() {
+
+  const data = await getContentful(gql`
+    query {
+      exerciseSessionCollection {
+        items {
+          sessionName
+          sys {
+            id
+          }
+          landingImage {
+            title
+            url
+            width
+            height
+          }
+          imageXPosition
+          imageYPosition
+        }
+      }
+    }
+  `);
+
+  const exerciseSessions = data.exerciseSessionCollection.items;
 
   return <>
-      <section className={styles.wrapper}>
-        <section className={styles.headingSection}>
-          <h1 className={styles.heading}>
-            <SlideUpAnimation delayInMs={LINE_DELAY * 2}>Hi, I{"'"}m Rui.</SlideUpAnimation>
-            <SlideUpAnimation delayInMs={LINE_DELAY * 3}>I{"'"}m a Student and Teaching Assistant</SlideUpAnimation>
-            <SlideUpAnimation delayInMs={LINE_DELAY * 4}>at the Federal Institute of Technology Zurich.</SlideUpAnimation>
+    <div className={styles.wrapper}>
+      <div className={styles.flex}>
+        <section className={styles.introduction}>
+          <h1>
+            <SlideUpAnimation>
+              Exercise
+            </SlideUpAnimation>
+            <SlideUpAnimation delayInMs={LINE_DELAY}>
+              Classes
+            </SlideUpAnimation>
           </h1>
-          <h1 className={styles.mobileHeading}>
-            <SlideUpAnimation delayInMs={LINE_DELAY * 2}>Hi, I{"'"}m Rui.</SlideUpAnimation>
-            <SlideUpAnimation delayInMs={LINE_DELAY * 3}>I{"'"}m a Student and</SlideUpAnimation>
-            <SlideUpAnimation delayInMs={LINE_DELAY * 4}>Teaching Assistant</SlideUpAnimation>
-            <SlideUpAnimation delayInMs={LINE_DELAY * 5}>at the Federal Institute</SlideUpAnimation>
-            <SlideUpAnimation delayInMs={LINE_DELAY * 6}>of Technology Zurich.</SlideUpAnimation>
-          </h1>
+          <p>
+            The following page(s) contain slides and summaries of my exercise sessions.
+          </p>
         </section>
-        <section className={styles.links}>
-          <ImageLink
-            className={styles.imageLink}
-            imgSrc={classes}
-            title="foto of pencils"
-            href="/classes"
-            subtitle="To the Exercise Classes"
+        <section className={styles.sessionGrid}>
+          {
+            exerciseSessions.map((item: any) => {
+              return <CourseCard 
+                key={item.sys.id}
+                id={item.sys.id}
+                sessionName={item.sessionName}
+                img={{
+                  title: item.landingImage.title,
+                  url: item.landingImage.url,
+                  width: item.landingImage.width,
+                  height: item.landingImage.height,
+                  xPosition: item.imageXPosition,
+                  yPosition: item.imageYPosition
+                }}
+              />
+            })
+          }
+          <ImageLink 
+            imgSrc={more}
+            title="More is coming in the future."
           />
-          <ImageLink
-            className={styles.imageLink}
-            imgSrc={ethhg}
-            title="foto of hg, eth zurich"
-            href="/about"
-            subtitle="About Page"
-          />
-          <Image
-            className={styles.img}
-            src={studentvillage}
-            alt="foto of student village"
-          />
-          <Image
-            className={styles.img}
-            src={polybahn}
-            alt="foto of polybahn"
-          />
+          <div className={styles.toBeContinued}>
+            <div className={styles.svgContainer}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,96a32,32,0,1,0,32,32A32,32,0,0,0,128,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,128,144ZM48,96a32,32,0,1,0,32,32A32,32,0,0,0,48,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,48,144ZM208,96a32,32,0,1,0,32,32A32,32,0,0,0,208,96Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,208,144Z"></path></svg>
+            </div>
+          </div>
         </section>
-      </section>  
+      </div>
+    </div> 
   </>
-
 }
