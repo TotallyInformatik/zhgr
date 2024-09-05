@@ -16,12 +16,12 @@
   overflow-x: auto;
   position: relative;
   left: calc(-1 * var(--standard-gap));
-  padding-inline: var(--standard-gap);
 }
 .linksWrapper::-webkit-scrollbar {
   display: none;
 }
 .links {
+  padding-inline: var(--standard-gap);
   display: flex;
   gap: 40px;
   margin-bottom: 50px;
