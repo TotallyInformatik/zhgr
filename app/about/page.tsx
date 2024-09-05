@@ -57,7 +57,8 @@ export default function Page() {
                 </Link>
                 </div>
                 <p>
-                  Some of my links.
+                  Feel free to reach out. Since you{"'"}re probably an ETH student 
+                  it{"'"}ll likely be about the exercise sessions but I{"'"}m open to anything :{")"}.
                 </p>
               </section>
               <ImageLink
@@ -86,8 +87,7 @@ export default function Page() {
                 className={styles.imageLink}
                 imgSrc={polybahn}
                 title=""
-                subtitle="Feel free to reach out. Since you're probably an ETH student 
-            it'll likely be about the exercise sessions but I'm open to anything :)."
+                subtitle="Random Foto of the Polybahn I found. Thanks Unsplash."
               />
             </section>
           </section>
