@@ -101,7 +101,7 @@ img::selection {
 
 
 header {
-  /*animation: var(--standard-animation);*/
+  animation: var(--standard-animation);
   width: 100vw;
   height: var(--header-height);
   display: flex; 
@@ -109,14 +109,20 @@ header {
   justify-content: space-between;
   padding-inline: var(--standard-gap);
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   color: white;
   mix-blend-mode: difference;
-  transform: translate3d(0,0,0);
   background-repeat: no-repeat;
   top: 0;
   left: 0;
 }
+@media (pointer:none), (pointer:coarse) {
+  header {
+    background-color: white;
+  }
+}
+
+
 header a::selection, header p::selection {
   background: none;
 }

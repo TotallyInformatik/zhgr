@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Head from "next/head";
-import Link from "next/link";
 import { Footer, TLink } from "@/components";
 
 
 export const metadata: Metadata = {
-  title: "zhangrui",
+  title: "zhang | rui",
   description: "Rui Zhang - Teaching Assistant ETHZ",
 };
 
