@@ -112,14 +112,10 @@ header {
   z-index: 99;
   color: white;
   mix-blend-mode: difference;
+  background-color: transparent;
   background-repeat: no-repeat;
   top: 0;
   left: 0;
-}
-@media (pointer:none), (pointer:coarse) {
-  header {
-    background-color: white;
-  }
 }
 
 
