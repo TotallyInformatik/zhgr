@@ -83,12 +83,6 @@ export default function Page() {
                 title="My Participation at Start Hack 2024. We won a case!"
                 subtitle="In my free time I like to go out with friends, work on other creative projects or play video games, pretending as if I haven't had enough screen time."
               />
-              <ImageLink
-                className={styles.imageLink}
-                imgSrc={polybahn}
-                title=""
-                subtitle="Random Foto of the Polybahn I found. Thanks Unsplash."
-              />
             </section>
           </section>
       </div>

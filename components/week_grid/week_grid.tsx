@@ -38,16 +38,11 @@ export const WeekGrid = (
     const rows = Math.round(Math.ceil(wrapperBoundingRect.height) / Math.floor(gridElementBoundingRect.height));
     const columns = Math.round(Math.ceil(wrapperBoundingRect.width) / Math.floor(gridElementBoundingRect.width));
 
-    console.log(rows)
-    console.log(columns)
-
     const newFill = rows * columns - p.weeksData.length
 
     fillWrapperRef.current.style.height = `${gridElementBoundingRect.height}px`;
     fillWrapperRef.current.style.width = `${gridElementBoundingRect.width * newFill}px`;
 
-
-    console.log(newFill);
     setFill(newFill);
     
 

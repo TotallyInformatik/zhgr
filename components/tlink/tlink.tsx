@@ -2,7 +2,7 @@
 import { ReactNode } from "react"
 import styles from "./tlink.module.css"
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 
 interface TLinkProps extends React.AnchorHTMLAttributes<any> {
@@ -17,30 +17,30 @@ export const TLink = ({
 }: TLinkProps) => {
 
   const router = useRouter();
+  const path = usePathname();
 
   const handleTransition = async (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     e.preventDefault();
 
-    const main = document.querySelector("main");
-    const footer = document.querySelector("footer");
+    console.log(path);
+    console.log(href);
+    if (path == href) {
+      return;
+    }
 
-    if (main == null || footer == null) return 
+    const main = document.querySelector("main");
+    //const footer = document.querySelector("footer");
+
+    if (main == null) return 
 
     main.classList.add("page-exit");
-    footer.classList.add("page-exit");
+    //footer.classList.add("page-exit");
 
     setTimeout(function () {
       router.push(href)
     }, 800)
-    setTimeout(function () {
-      main.classList.remove("page-exit");
-      footer.classList.remove("page-exit");
-    }, 950)
-
-
-
   }
 
   return <Link

@@ -7,7 +7,6 @@ import { WeekGrid } from "@/components";
 import { notFound } from "next/navigation";
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  //return <div>My Post: {params.slug}</div>
 
   const query = gql`query {
     exerciseSession(id: "${params.slug}") {

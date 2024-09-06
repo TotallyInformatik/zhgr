@@ -24,7 +24,7 @@ export const ImageLink = ({
   subtitle?: string
 }) => {
 
-  const L = href === undefined ? Link : TLink;
+  const L = href == undefined ? Link : TLink;
 
 
   return <>
