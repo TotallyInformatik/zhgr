@@ -44,7 +44,6 @@ export const WeekGrid = (
     fillWrapperRef.current.style.width = `${gridElementBoundingRect.width * newFill}px`;
 
     setFill(newFill);
-    
 
   }
 

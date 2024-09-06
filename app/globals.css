@@ -109,9 +109,10 @@ header {
   justify-content: space-between;
   padding-inline: var(--standard-gap);
   position: fixed;
-  z-index: 99999;
+  z-index: 999;
   color: white;
   mix-blend-mode: difference;
+  transform: translate3d(0,0,0);
   top: 0;
   left: 0;
 }
