@@ -101,7 +101,7 @@ img::selection {
 
 
 header {
-  animation: var(--standard-animation);
+  /*animation: var(--standard-animation);*/
   width: 100vw;
   height: var(--header-height);
   display: flex; 
@@ -113,6 +113,7 @@ header {
   color: white;
   mix-blend-mode: difference;
   transform: translate3d(0,0,0);
+  background-repeat: no-repeat;
   top: 0;
   left: 0;
 }
