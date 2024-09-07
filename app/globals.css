@@ -4,7 +4,7 @@
 
 :root {
   --footer-height: 70px;
-  --header-height: 100px;
+  --header-height: 120px;
   --highlighter-2: rgba(0, 238, 255, 0.55);
   --highlighter-1: rgba(55, 97, 56, 0.55);
   --standard-gap: 50px;
@@ -156,9 +156,14 @@ header ul li:hover p:after {
 
 header .logo {
   border-bottom: none;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
+  line-height: 1.1rem;
   font-weight: 500;
-  font-family: "Serif";
+}
+.logo span {
+  display: block;
+  text-align: right;
+
 }
 header .logo::before {
   display: none;

@@ -67,7 +67,7 @@ export default function Page() {
                   src={code}
                   alt="A foto of some code."
                 />
-                <p>In my free time I like to go out with friends, work on other creative projects or play video games, pretending as if I haven{"'"}t had enough screen time.</p>
+                <p>This website was created for my exercise sessions. I used NextJS and Vercel </p>
               </div>
             </div>
 

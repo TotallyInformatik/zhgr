@@ -22,7 +22,7 @@ export default function RootLayout({
       <body>
         <header>
           <TLink className="logo" href="/">
-            zhang|rui
+            ZHANGRUI
           </TLink>
           <ul>
             <li title="Classes">
