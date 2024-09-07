@@ -14,8 +14,10 @@
   animation: var(--standard-animation);
   width: 100vw;
   overflow-x: auto;
+  height: 800px;
   position: relative;
   left: calc(-1 * var(--standard-gap));
+  margin-bottom: 50px;
 }
 .linksWrapper::-webkit-scrollbar {
   display: none;
@@ -23,43 +25,42 @@
 .links {
   padding-inline: var(--standard-gap);
   display: flex;
+  align-items: stretch;
   gap: 40px;
-  margin-bottom: 50px;
-  width: fit-content;
+  width: max-content;
+  height: 600px;
 }
-.column {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  width: 500px;
-}
-
-.imageLink {
-  height: fit-content;
+.item {
+  height: 100%;
   width: 100%;
+  position: relative;
 }
-.imageLink div {
-  height: fit-content;
-}
-.imageLink div img {
+.item img {
   height: 100%;
   width: auto;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.item p {
+  padding: 7px;
+  color: rgba(0, 0, 0, var(--unimportant-opacity));
+  position: absolute; 
+  background-color: white;
 }
 
 .shameless {
-  display: flex;
-  gap: 0;
-  flex-direction: column;
+  height: 100%;
 }
 .shameless .plugs {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  width: max-content;
   margin: 0;
 }
 
-.shameless a {
-  background-color: rgb(238, 238, 238, var(--unimportant-opacity));
-  width: 40%;
+.plugs a {
+  /*background-color: rgb(238, 238, 238, var(--unimportant-opacity));*/
+  height: 20%;
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
