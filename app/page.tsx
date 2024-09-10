@@ -3,6 +3,9 @@ import { CourseCard, ImageLink, LINE_DELAY, SlideUpAnimation } from "@/component
 import gql from "graphql-tag";
 import { getContentful } from "@/lib";
 import more from "@/public/more.jpg"
+import Head from "next/head";
+import cn from "classnames";
+import Script from "next/script";
 
 export default async function Page() {
 
@@ -42,7 +45,7 @@ export default async function Page() {
             </SlideUpAnimation>
           </h1>
           <p>
-            The following page(s) contain slides and summaries of my exercise sessions.
+            Click the following pages to get materials for my exercise classes
           </p>
         </section>
         <section className={styles.sessionGrid}>

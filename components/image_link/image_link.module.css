@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 .hasLink .image {
-  transition: transform 0.2s ease;
+  transition: transform 0.5s ease;
 }
 .hasLink:hover .image {
   -webkit-transform:scale(0.9, 0.9);

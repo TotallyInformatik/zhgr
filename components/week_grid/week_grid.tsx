@@ -74,8 +74,8 @@ export const WeekGrid = (
 
   if (tabBoundingBox && wrapperBoundingBox) {
     highlightStyles.transition = isHoveredFromNull ? 
-        "transform 0s linear, opacity 0.2s ease" : 
-        "transform 0.2s ease, opacity 0.2s ease";
+        "transform 0s linear, opacity 0.35s ease" : 
+        "transform 0.35s ease, opacity 0.35s ease";
     highlightStyles.opacity = highlightedTab ? 1 : 0;
     highlightStyles.width = `${tabBoundingBox.width}px`;
     highlightStyles.height = `${tabBoundingBox.height}px`;

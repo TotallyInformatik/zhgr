@@ -10,13 +10,11 @@
   gap: 50px;
 }
 .introduction {
-  width: 380px; 
+  width: min-content; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   row-gap: 20px;
-  position: sticky;
-  top: 30%;
 }
 .introduction p {
   opacity: var(--unimportant-opacity);
@@ -24,18 +22,16 @@
   padding-left: 6px;
 }
 .introduction h1 { 
-  font-size: 6rem;
-  line-height: 5.5rem;
+  font-size: 5rem;
+  line-height: 4.9rem;
   padding-bottom: 0px;
   width: min-content;
   flex-wrap: wrap;
-  /*border-bottom: var(--standard-underline);*/
 }
 
 .sessionGrid {
   animation: var(--standard-animation);
-  /*padding-block: var(--standard-gap);*/
-  width: 55%;
+  width: calc(100vw - 380px - 20px - 2 * var(--standard-gap));
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -97,6 +93,8 @@
     column-gap: 5%;
     align-items: end;
     position:static;
+    transform: initial;
+    margin-bottom: 50px;
   }
   .introduction, .introduction h1 {
     width: fit-content;
@@ -107,7 +105,7 @@
   }
   .sessionGrid {
     width: 100%;
-    gap: 20px;
+    gap: 50px;
   }
 }
 

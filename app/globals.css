@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --footer-height: 70px;
+  --footer-height: 300px;
   --header-height: 120px;
-  --highlighter-2: rgba(0, 238, 255, 0.55);
-  --highlighter-1: rgba(55, 97, 56, 0.55);
+  --highlighter-1: rgba(209, 209, 209, 0.55);
   --standard-gap: 50px;
   --standard-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
-  --unimportant-opacity: 0.6;
+  --unimportant-opacity: 0.4;
   --standard-underline: 3px black solid;
   --standard-animation: 1s ease 0s fadeIn;
+  --standard-animation-duration: 0.5s;
 }
 ::selection {
   background: var(--highlighter-1);
@@ -68,8 +68,6 @@ main, footer {
 body {
   width: 100vw;
   background-color: #fff;
-  /*background-size: 100px 100px;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0) 1px);*/
 }
 
 
@@ -90,8 +88,8 @@ h3 {
   margin-bottom: 5px;
 }
 p, a, li {
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
   display: block;
 }
 
@@ -127,43 +125,45 @@ header ul {
   align-items: center;
   gap: 50px;
 }
-header ul li a {
+header ul li {
   display: flex;
   align-items: center;
   gap: 10px;
   border-bottom: none;
 }
-header ul li a p {
-  font-size: 1.05rem;
+header ul li a {
+  font-size: 1.2rem;
+}
+
+
+.underlineLink {
   contain: paint;
 }
-header ul li a p::after {
+.underlineLink::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
-  transition: width 0.2s ease;
-  height: 1px;
+  transition: width var(--standard-animation-duration) ease;
+  height: 2px;
   background-color: white;
 }
-header ul li a::before {
-  display: none;
+.underlineLink:hover::after, .underlineLink:focus::after {
+  width: 100%;
 }
-header ul li:hover p:after {
-  width: 100%
-}
+
+
 
 header .logo {
   border-bottom: none;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.1rem;
   font-weight: 500;
 }
 .logo span {
   display: block;
   text-align: right;
-
 }
 header .logo::before {
   display: none;
@@ -171,13 +171,26 @@ header .logo::before {
 
 main {
   width: 100%;
-  margin-top: var(--header-height);
+  /*margin-top: var(--header-height);*/
   padding: var(--standard-gap);
+  padding-top: calc(var(--standard-gap) + var(--header-height));
   position: relative;
   min-height: calc(100vh - var(--footer-height) - var(--header-height));
   display: flex;  
   align-items: center;
+  background-color: #fff;
 }
+
+
+/* Links */
+.fadeInLink {
+  color: rgba(0, 0, 0, var(--unimportant-opacity));
+  transition: color 0.5s ease;
+}
+.fadeInLink:hover, .fadeInLink:focus {
+  color: rgb(0, 0, 0);
+}
+
 
 
 @media screen and (max-width: 1000px) {
@@ -188,8 +201,13 @@ main {
   header ul {
     gap: 20px;
   }
+  header ul li a p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
   p, a, li {
     font-size: 1.2rem;
+    line-height: 1.8rem;
     display: block;
   }
 

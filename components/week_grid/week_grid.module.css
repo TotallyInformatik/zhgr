@@ -30,7 +30,7 @@
   background-color: rgb(238, 238, 238, var(--unimportant-opacity));
   cursor: pointer;
   border: 10px solid white;
-  transition: background-color 0.25s ease;
+  transition: background-color var(--standard-animation-duration) ease;
 }
 
 .card:hover .week, .card:hover .title {
@@ -49,7 +49,7 @@
   position: absolute;
   z-index: 2;
   opacity: var(--unimportant-opacity);
-  transition: opacity 0.25s ease;
+  transition: opacity var(--standard-animation-duration) ease;
 }
 .week {
   top: 20px;

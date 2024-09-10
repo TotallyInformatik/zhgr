@@ -5,6 +5,7 @@ import { getContentful } from "@/lib";
 import { LINE_DELAY, SlideUpAnimation } from "@/components";
 import { WeekGrid } from "@/components";
 import { notFound } from "next/navigation";
+import classNames from "classnames";
 
 export default async function Page({ params }: { params: { slug: string } }) {
 
@@ -69,10 +70,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </li>
             {
               exerciseSessionData.utilLinks.map((item: any) => {
-                return <Link href={item.link} key={item.title} className={styles.utilLink} ><li>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#000000" viewBox="0 0 256 256"><path d="M165.66,90.34a8,8,0,0,1,0,11.32l-64,64a8,8,0,0,1-11.32-11.32l64-64A8,8,0,0,1,165.66,90.34ZM215.6,40.4a56,56,0,0,0-79.2,0L106.34,70.45a8,8,0,0,0,11.32,11.32l30.06-30a40,40,0,0,1,56.57,56.56l-30.07,30.06a8,8,0,0,0,11.31,11.32L215.6,119.6a56,56,0,0,0,0-79.2ZM138.34,174.22l-30.06,30.06a40,40,0,1,1-56.56-56.57l30.05-30.05a8,8,0,0,0-11.32-11.32L40.4,136.4a56,56,0,0,0,79.2,79.2l30.06-30.07a8,8,0,0,0-11.32-11.31Z"></path></svg>
-                    <p>{item.title}</p>
-                  </li></Link>
+                return <li key={item.title}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#000000" viewBox="0 0 256 256"><path d="M165.66,90.34a8,8,0,0,1,0,11.32l-64,64a8,8,0,0,1-11.32-11.32l64-64A8,8,0,0,1,165.66,90.34ZM215.6,40.4a56,56,0,0,0-79.2,0L106.34,70.45a8,8,0,0,0,11.32,11.32l30.06-30a40,40,0,0,1,56.57,56.56l-30.07,30.06a8,8,0,0,0,11.31,11.32L215.6,119.6a56,56,0,0,0,0-79.2ZM138.34,174.22l-30.06,30.06a40,40,0,1,1-56.56-56.57l30.05-30.05a8,8,0,0,0-11.32-11.32L40.4,136.4a56,56,0,0,0,79.2,79.2l30.06-30.07a8,8,0,0,0-11.32-11.31Z"></path></svg>
+                  <Link className="underlineLink" href={item.link}>{item.title}</Link>
+                </li>
               })
             }
           </ul>
