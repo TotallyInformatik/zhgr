@@ -55,10 +55,7 @@ export const WeekGrid = (
 
   const repositionHighlight = (e: any, item: any) => {
 
-    let target = e.target;
-    if (target.id != "parent") {
-      target = target.parentNode;
-    }
+    let target = e.currentTarget;
 
     const targetBoundingRect = target.getBoundingClientRect();
     setTabBoundingBox(targetBoundingRect);
@@ -104,7 +101,6 @@ export const WeekGrid = (
           return <section 
             ref={index == 0 ? gridElementRef : null}
             key={index}
-            id="parent"
             onMouseLeave={resetHighlight}
             onMouseOver={(ev) => repositionHighlight(ev, item)}
             className={styles.card}

@@ -1,5 +1,6 @@
 export * from "./course_card"
 export * from "./slide_up_animation"
+export * from "./about_gallery"
 export * from "./footer"
 export * from "./image_link"
 export * from "./week_grid"
