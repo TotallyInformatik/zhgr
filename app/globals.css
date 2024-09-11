@@ -125,13 +125,13 @@ header ul {
   align-items: center;
   gap: 50px;
 }
-header ul li {
+header ul li .link {
   display: flex;
   align-items: center;
   gap: 10px;
   border-bottom: none;
 }
-header ul li a {
+header ul li p {
   font-size: 1.2rem;
 }
 
