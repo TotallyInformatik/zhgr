@@ -14,23 +14,26 @@ export const AboutGallery = () => {
 
   const [startX, setStartX] = useState(NaN);
   const [scrollLeft, setScrollLeft] = useState(NaN);
+  const [grabbing, setGrabbing] = useState(false);
 
-  return <div className={styles.linksWrapper}
+  return <div className={cn(styles.linksWrapper, grabbing && styles.grabbing)}
     onMouseDown={(e) => {
       e.preventDefault();
       setStartX(e.pageX - e.currentTarget.offsetLeft);
       setScrollLeft(e.currentTarget.scrollLeft);
+      setGrabbing(true)
     }}
     onMouseMove={(e) => {
       if (Number.isNaN(startX)) return;
       e.preventDefault();
 
       const x = e.pageX - e.currentTarget.offsetLeft;
-      const walk = (x - startX) * 2;
+      const walk = (x - startX);
       e.currentTarget.scrollLeft = scrollLeft - walk;
     }}
     onMouseUp={() => {
       setStartX(NaN);
+      setGrabbing(false)
     }}
   >
     <section className={styles.links}>

@@ -7,6 +7,10 @@
   position: relative;
   left: calc(-1 * var(--standard-gap));
   margin-bottom: 50px;
+  cursor: grab;
+}
+.grabbing {
+  cursor: grabbing;
 }
 .linksWrapper::selection {
   background: none;
