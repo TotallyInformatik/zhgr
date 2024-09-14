@@ -6,7 +6,7 @@ import Link from "next/link";
 
 
 export const metadata: Metadata = {
-  title: "zhangrui",
+  title: "Zhang, Rui",
   description: "Rui Zhang - Teaching Assistant ETHZ",
 };
 
@@ -26,7 +26,7 @@ export default function RootLayout({
       <body>
         <header>
           <TLink className="logo" href="/">
-            ZHANGRUI
+            ZHANG,RUI
           </TLink>
           <ul>
             <li title="Classes">

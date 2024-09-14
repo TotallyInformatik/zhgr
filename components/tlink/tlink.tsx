@@ -24,19 +24,17 @@ export const TLink = ({
   ) => {
     e.preventDefault();
 
-    console.log(path);
-    console.log(href);
     if (path == href) {
       return;
     }
 
     const main = document.querySelector("main");
-    //const footer = document.querySelector("footer");
+    const footer = document.querySelector("footer");
 
-    if (main == null) return 
+    if (main == null || footer == null) return 
 
     main.classList.add("page-exit");
-    //footer.classList.add("page-exit");
+    footer.classList.add("page-exit");
 
     setTimeout(function () {
       router.push(href)

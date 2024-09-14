@@ -12,7 +12,7 @@
   width: 100%;
 }
 .landingSection h1 {
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   width: max-content;
 }
 
@@ -30,9 +30,6 @@
 }
 .landingSection .information a {
   width: fit-content;
-}
-.landingSection .information a::after {
-  background-color: black;
 }
 .landingSection .information li {
   display: flex;

@@ -131,6 +131,9 @@ header ul li .link {
   gap: 10px;
   border-bottom: none;
 }
+header ul li .link .underlineLink::after {
+  background-color: white;
+}
 header ul li p {
   font-size: 1.2rem;
 }
@@ -147,7 +150,7 @@ header ul li p {
   width: 0%;
   transition: width var(--standard-animation-duration) ease;
   height: 2px;
-  background-color: white;
+  background-color: black;
 }
 .underlineLink:hover::after, .underlineLink:focus::after {
   width: 100%;

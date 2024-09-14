@@ -3,4 +3,3 @@
 - create subscription for emails
 - create better logo and animation for logo
 - implement dark mode
-- add another item in the courses section to indicate more to come and to indicate Highlighter Theming.

@@ -27,9 +27,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
         title
         date
         week
-        file {
-          url
+        filesCollection {
+          items {
+            title
+            url
+          }
         }
+        links
       }
     }
   }`;
