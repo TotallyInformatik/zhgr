@@ -75,33 +75,34 @@ export const WeekGrid = (
   const updateHoverStyles = () => {
     const newHighlightStyles: any = {};
     if (tabBoundingBox && wrapperBoundingBox) {
+      console.log("doing it 2.");
       newHighlightStyles.transition = isHoveredFromNull ? 
-          "transform 0s linear, opacity 0.35s ease" : 
-          "transform 0.35s ease, opacity 0.35s ease";
+          "translate 0s linear, opacity 0.35s ease" : 
+          "translate 0.35s ease, opacity 0.35s ease";
       newHighlightStyles.opacity = highlightedTab ? 1 : 0;
       newHighlightStyles.width = `${tabBoundingBox.width}px`;
       newHighlightStyles.height = `${tabBoundingBox.height}px`;
-      newHighlightStyles.transform = `translate(${
+
+      newHighlightStyles.translate = `${
         tabBoundingBox.left - wrapperBoundingBox.left
-      }px, ${
+      }px ${
         tabBoundingBox.top - wrapperBoundingBox.top
-      }px)`;
+      }px`;
+
       setHighlightStyles(newHighlightStyles);
     }
   }
 
-  const updateHoverDelayed = () => {
-
-    const timeOutId = setTimeout(async () => {
+  useEffect(() => {
+    const id = setInterval(async () => {
       updateHoverStyles();
-    }, highlightedTab == null ? 0 : 300)
+      console.log("doing it.");
+    }, 100)
 
     return () => {
-      clearTimeout(timeOutId)
-    };
-  }
-
-  useEffect(updateHoverDelayed, [tabBoundingBox, highlightedTab == null]);
+      clearInterval(id);
+    }
+  }, [tabBoundingBox]);
 
   return  <section className={styles.content}>
     <section className={styles.weeks} ref={wrapperRef}>
@@ -123,7 +124,7 @@ export const WeekGrid = (
             onMouseLeave={resetHighlight}
             onMouseOver={(ev) => repositionHighlight(ev, item)}
             className={classNames(styles.card, item.title && styles.activated)}
-            title={`${date} - ${title}`} 
+            title={`${date} - ${title || "Coming Soon."}`} 
           >
             <section className={styles.heading}>
               <h2 className={styles.week}>{item.week}</h2>

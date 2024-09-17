@@ -77,10 +77,10 @@
 
 .hoverEffect {
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   background-color: var(--highlighter-1);
-  transition: transform 0.15s ease 
-              opacity 0.15s ease;
+  transition: translate 0.35s ease 
+              opacity 0.35s ease;
 }
 
 
