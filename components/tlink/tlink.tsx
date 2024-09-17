@@ -8,7 +8,8 @@ import classNames from "classnames";
 
 interface TLinkProps extends React.AnchorHTMLAttributes<any> {
   children: ReactNode;
-  href: string
+  href: string;
+  doesFade: boolean
 }
 
 // basically only used for header.
@@ -16,13 +17,13 @@ interface TLinkProps extends React.AnchorHTMLAttributes<any> {
 export const TLink = ({
   children,
   href,
+  doesFade,
   ...props
 }: TLinkProps) => {
 
   const router = useRouter();
   const path = usePathname();
   const ref = useRef<any>();
-
 
   const handleTransition = async (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -47,7 +48,7 @@ export const TLink = ({
   return <Link
     onClick={handleTransition}
     href={href} {...props} 
-    className={classNames(props.className, (path == href) && "inactive", styles.tlink)}
+    className={classNames(props.className, (path == href && doesFade) && "inactive", styles.tlink)}
     ref={ref}
   > 
     {children} 

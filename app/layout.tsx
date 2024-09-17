@@ -25,12 +25,12 @@ export default function RootLayout({
       </Head>
       <body>
         <header>
-          <p className="logo">
+          <TLink doesFade={false} href="/" className="logo">
             ZHANG,RUI
-          </p>
+          </TLink>
           <ul>
             <li title="Classes">
-              <TLink className="link" href="/">
+              <TLink doesFade className="link" href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} fill="#fff" viewBox="0 0 256 256"><path d="M240,192h-8V168a8,8,0,0,0-8-8H160a8,8,0,0,0-8,8v24H40V56H216v80a8,8,0,0,0,16,0V56a16,16,0,0,0-16-16H40A16,16,0,0,0,24,56V192H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16Zm-72-16h48v16H168Z"></path></svg>
                 <p className="underlineLink">
                   Classes
@@ -38,7 +38,7 @@ export default function RootLayout({
               </TLink>
             </li>
             <li title="About">
-              <TLink href="/about" className="link">
+              <TLink doesFade href="/about" className="link">
                 <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} fill="#fff" viewBox="0 0 256 256"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg>
                 <p className="underlineLink">
                   About
