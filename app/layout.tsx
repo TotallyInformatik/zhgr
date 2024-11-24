@@ -3,7 +3,7 @@ import "./globals.css";
 import Head from "next/head";
 import { Footer, TLink } from "@/components";
 import Link from "next/link";
-
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "zhang,rui",
@@ -57,6 +57,7 @@ export default function RootLayout({
         </header>
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
