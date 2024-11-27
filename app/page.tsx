@@ -3,6 +3,7 @@ import { CourseCard, ImageLink, LINE_DELAY, SlideUpAnimation } from "@/component
 import gql from "graphql-tag";
 import { getContentful } from "@/lib";
 import more from "@/public/more.png"
+import classNames from "classnames";
 
 
 export default async function Page() {
@@ -47,6 +48,10 @@ export default async function Page() {
           </p>
         </section>
         <section className={styles.sessionGrid}>
+          <div className={styles.announcement}>
+            Every year, VIS gives out the {'"'}VIS Teaching Awards{'"'}. If you find my materials {'/'} my classes to be helpful, I would be super grateful
+            for a vote: <a className="underlineLink" href="https://limesurvey.vis.ethz.ch/index.php?r=survey/index&token=TL2dzEJgZRNj3Nn&sid=279111&lang=de">{"<"}Click Me!{'>'}</a>
+          </div>
           {
             exerciseSessions.map((item: any) => {
               return <CourseCard 
