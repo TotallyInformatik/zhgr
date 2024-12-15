@@ -48,10 +48,6 @@ export default async function Page() {
           </p>
         </section>
         <section className={styles.sessionGrid}>
-          <div className={styles.announcement}>
-            Every year, VIS gives out the {'"'}VIS Teaching Awards{'"'}. If you find my materials {'/'} my classes to be helpful, I would be super grateful
-            for a vote {":)"} You can find your link for voting in your ETH Email account.
-          </div>
           {
             exerciseSessions.map((item: any) => {
               return <CourseCard 
