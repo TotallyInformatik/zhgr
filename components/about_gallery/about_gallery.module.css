@@ -1,13 +1,18 @@
 
-.linksWrapper {
-  animation: var(--standard-animation);
-  width: 100vw;
-  overflow-x: auto;
+/* these two heights must be the same */
+.wrapper {
   height: 800px;
-  position: relative;
-  left: calc(-1 * var(--standard-gap));
+}
+.linksWrapper {
+  height: 800px;
+  animation: var(--standard-animation);
+  position: absolute;
+  width: 100%;
+  overflow-x: auto;
+  left: 0;
   margin-bottom: 50px;
   cursor: grab;
+  /* left: calc(-1 * var(--standard-gap)); */
 }
 .grabbing {
   cursor: grabbing;
@@ -52,6 +57,9 @@
 
 .shameless {
   height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 .shameless .plugs {
   display: flex;

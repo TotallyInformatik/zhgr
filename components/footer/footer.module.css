@@ -12,7 +12,7 @@
   animation: 1s ease 0s fadeInFooter;
   position: relative;
   bottom: 0px;
-  width: 100vw;
+  width: 100%;
   contain: paint;
   gap: 0px;
   margin-top: 200px;

@@ -3,8 +3,6 @@ import { CourseCard, ImageLink, LINE_DELAY, SlideUpAnimation } from "@/component
 import gql from "graphql-tag";
 import { getContentful } from "@/lib";
 import more from "@/public/more.png"
-import classNames from "classnames";
-
 
 export default async function Page() {
 
@@ -66,6 +64,7 @@ export default async function Page() {
             })
           }
           <ImageLink 
+            className={styles.more}
             imgSrc={more}
             title="More is coming in the future."
           />
