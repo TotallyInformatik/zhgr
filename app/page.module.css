@@ -7,7 +7,6 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 50px;
 }
 .introduction {
   width: min-content; 
@@ -131,8 +130,8 @@
 
 @media screen and (max-width: 600px) {
   .introduction h1 {
-    font-size: 6rem;
-    line-height: 5.5rem;
+    font-size: 4rem;
+    line-height: 4.2rem;
   }
   .introduction {
     flex-direction: column;
@@ -142,8 +141,6 @@
 
 @media screen and (max-width: 400px) {
   .introduction h1 {
-    font-size: 23vw;
-    line-height: 22vw;
   }
   .introduction {
     flex-direction: column;

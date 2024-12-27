@@ -43,7 +43,7 @@ export const WeekGrid = (
     fillWrapperRef.current.style.height = `${gridElementBoundingRect.height}px`;
     fillWrapperRef.current.style.width = `${gridElementBoundingRect.width * newFill}px`;
 
-    setFill(newFill);
+    setFill(Math.max(newFill, 0));
 
   }
 
@@ -75,7 +75,6 @@ export const WeekGrid = (
   const updateHoverStyles = () => {
     const newHighlightStyles: any = {};
     if (tabBoundingBox && wrapperBoundingBox) {
-      console.log("doing it 2.");
       newHighlightStyles.transition = isHoveredFromNull ? 
           "translate 0s linear, opacity 0.35s ease" : 
           "translate 0.35s ease, opacity 0.35s ease";
@@ -96,7 +95,6 @@ export const WeekGrid = (
   useEffect(() => {
     const id = setInterval(async () => {
       updateHoverStyles();
-      console.log("doing it.");
     }, 100)
 
     return () => {

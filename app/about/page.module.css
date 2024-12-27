@@ -21,7 +21,7 @@
 }
 @media screen and (max-width: 530px) {
   .mobileHeading {
-    font-size: 8vw;
-    line-height: 12vw;
+    font-size: 7vw;
+    line-height: 11vw;
   }
 }

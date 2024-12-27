@@ -28,7 +28,6 @@
 }
 .card {
   background-color: rgb(238, 238, 238, var(--unimportant-opacity));
-  cursor: pointer;
   border: 8px solid white;
   transition: background-color var(--standard-animation-duration) ease;
   padding: 20px;
@@ -60,9 +59,11 @@
 }
 
 .itemContent {
+  cursor: pointer;
   width: fit-content;
 }
 .itemContent a {
+  font-size: 1.4rem;
   width: fit-content;
   opacity: 0.8;
 }
