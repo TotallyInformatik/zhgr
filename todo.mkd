@@ -1,5 +1,5 @@
 # TODO:
 
-- create subscription for emails
-- create better logo and animation for logo
+- create horizontal list of old, archived courses after the main course that is currently held
 - implement dark mode
+- make this website a sort of service.

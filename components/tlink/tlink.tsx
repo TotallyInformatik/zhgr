@@ -4,12 +4,13 @@ import styles from "./tlink.module.css"
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import classNames from "classnames";
+import React from "react";
 
 
 interface TLinkProps extends React.AnchorHTMLAttributes<any> {
   children: ReactNode;
   href: string;
-  doesFade: boolean
+  doesfade?: boolean
 }
 
 // basically only used for header.
@@ -17,7 +18,7 @@ interface TLinkProps extends React.AnchorHTMLAttributes<any> {
 export const TLink = ({
   children,
   href,
-  doesFade,
+  doesfade,
   ...props
 }: TLinkProps) => {
 
@@ -48,7 +49,7 @@ export const TLink = ({
   return <Link
     onClick={handleTransition}
     href={href} {...props} 
-    className={classNames(props.className, (path == href && doesFade) && "inactive", styles.tlink)}
+    className={classNames(props.className, (path == href && doesfade) && "inactive", styles.tlink)}
     ref={ref}
   > 
     {children} 
