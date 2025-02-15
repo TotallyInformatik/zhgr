@@ -52,7 +52,9 @@ export const Footer = () => {
       <section>
         <h2>Attribution</h2>
         <ul>
-          <li>Fotos from <Link className="fadeInLink" href="https://unsplash.com/de">Unsplash</Link> and <Link className="fadeInLink" href="https://clemenskoprolin.com">Clemens Koprolin</Link></li>
+          <li>
+            Fotos from <Link className="fadeInLink" href="https://unsplash.com/de">Unsplash</Link> and <Link className="fadeInLink" href="https://clemenskoprolin.com">Clemens Koprolin</Link>
+          </li>
           <li>Icons from <Link className="fadeInLink" href="https://phosphoricons.com">Phosphoricons</Link></li>
           <li>Website by Rui Zhang @ ETH Zurich</li>
         </ul>

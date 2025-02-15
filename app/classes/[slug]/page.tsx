@@ -7,10 +7,12 @@ import { WeekGrid } from "@/components";
 import { notFound } from "next/navigation";
 import classNames from "classnames";
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: any) {
+
+  const { slug } = await params;
 
   const query = gql`query {
-    exerciseSession(id: "${params.slug}") {
+    exerciseSession(id: "${slug}") {
       sessionName
       weekTime
       location
@@ -19,7 +21,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     weekCollection(where: {
       session: {
         sys: {
-          id:"${params.slug}"
+          id:"${slug}"
         }
       }
     }, order: date_ASC) {

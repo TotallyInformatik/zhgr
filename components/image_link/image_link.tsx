@@ -28,7 +28,6 @@ export const ImageLink = ({
 
   return <>
     <L 
-      doesFade={false}
       href={href || "#"}
       className={cn(styles.card, className, href && styles.hasLink)}
       title={title}
