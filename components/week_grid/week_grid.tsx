@@ -124,7 +124,7 @@ export const WeekGrid = (
             className={classNames(styles.card, item.title && styles.activated)}
             title={`${date} - ${title || "Coming Soon."}`} 
           >
-            <section className={styles.heading}>
+            <section className={styles.sectionheading}>
               <h2 className={styles.week}>{item.week}</h2>
               {title != null ? <p className={styles.title}>{title}</p> : <p className={styles.comingSoon}>Coming Soon</p>}
             </section>
