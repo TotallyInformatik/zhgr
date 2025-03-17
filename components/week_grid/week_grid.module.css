@@ -42,18 +42,18 @@
 }
 
 
-.heading {
+.sectionheading {
   width: 100%;
   display: flex;
   gap: 30px;
   justify-content: space-between;
   align-items: start;
 }
-.heading .title {
+.sectionheading .title {
   font-size: 1.6rem;
   text-align: right;
 }
-.heading .comingSoon {
+.sectionheading .comingSoon {
   font-size: 1.6rem;
   position: absolute;
   bottom: 20px;
