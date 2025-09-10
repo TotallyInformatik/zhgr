@@ -1,149 +1,27 @@
-
 .wrapper {
-  width: 100%;
-  height: 100%;
-}
-.flex {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-.introduction {
-  width: min-content; 
+  align-self: end;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  row-gap: 20px;
-}
-.introduction p {
-  opacity: var(--unimportant-opacity);
-  animation: var(--standard-animation);
-  padding-left: 6px;
-}
-.introduction h1 { 
-  font-size: 5rem;
-  line-height: 4.9rem;
-  padding-bottom: 0px;
-  width: min-content;
-  flex-wrap: wrap;
-}
-
-.sessionGrid {
-  animation: var(--standard-animation);
-  width: calc(100% - 380px - 20px - 2 * var(--standard-gap));
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: center;
-  gap: 65px;
-}
-.toBeContinued {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.4;
-}
-.toBeContinued .svgContainer {
-  cursor: pointer;
-  position: relative;
-  width: max-content;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.toBeContinued .svgContainer svg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) rotateX(0deg) translateY(0%);
-  transition: all 0.3s ease-in-out;
-}
-.toBeContinued .svgContainer::after {
-  display: block;
-  content: "more in the future.";
-  font-weight: 350;
-  font-family: "Inter";
-  opacity: 0;
-  transform: rotateX(90deg) translateY(100%);
-  transition: all 0.3s ease-in-out;
-}
-.toBeContinued .svgContainer:hover svg {
-  transform: translateX(-50%) rotateX(90deg) translateY(-100%);
-  opacity: 0;
-}
-.toBeContinued .svgContainer:hover::after {
-  transform: rotateX(0deg) translateY(0%);
-  opacity: 1;
-}
-
-.more {
   width: 100%;
 }
-
-.announcement {
-  width: 100%;
-  margin-top: 10px;
-  padding: 20px;
-  background-color: whitesmoke;
-  font-size: 1.2rem;
-  font-size: 1rem;
-  animation: var(--standard-animation);
+.headingSection {
+  margin-bottom: 80px;
 }
-.announcement a {
-  font-size: 1rem;
-  display: inline-block;
-  line-height: 2rem;
+.mobileHeading {
+  display: none;
 }
 
-
-
-@media screen and (max-width: 1200px) {
-  .wrapper {
-    align-self: flex-start;
+@media screen and (max-width: 1030px) {
+  .heading {
+    display: none;
   }
-  .flex {
-    flex-direction: column;
-    align-items: start;
-  }
-  .introduction {
-    flex-direction: row;
-    column-gap: 5%;
-    align-items: end;
-    position:static;
-    transform: initial;
-    margin-bottom: 50px;
-  }
-  .introduction, .introduction h1 {
-    width: fit-content;
-  }
-  .introduction h1 {
-    font-size: 4rem;
-    line-height: 3.7rem;
-  }
-  .sessionGrid {
-    width: 100%;
-    gap: 50px;
+  .mobileHeading {
+    display: block;
   }
 }
-
-@media screen and (max-width: 600px) {
-  .introduction h1 {
-    font-size: 4rem;
-    line-height: 4.2rem;
-  }
-  .introduction {
-    flex-direction: column;
-    align-items: start;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .introduction h1 {
-  }
-  .introduction {
-    flex-direction: column;
-    align-items: start;
+@media screen and (max-width: 530px) {
+  .mobileHeading {
+    font-size: 7vw;
+    line-height: 11vw;
   }
 }
