@@ -115,19 +115,19 @@ img::selection {
 
 @keyframes imgBackgroundColorAnimation {
   0% {
-    opacity: 1;
+    background-color: white;
   }
   50% {
-    opacity: 0;
+    background-color: #D1D3D2;
   }
   100% {
-    opacity: 1;
+    background-color: white;
   }
 }
 
 img {
   background-color: #D1D3D2;
-  animation: 1s ease-in-out 0s infinite imgBackgroundColorAnimation;
+  animation: 2s ease-in-out 0s infinite imgBackgroundColorAnimation;
 }
 
 header {
