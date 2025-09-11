@@ -6,19 +6,21 @@ import Image from "next/image"
 import { img } from "@/lib"
 import { TLink } from "../tlink"
 import { ImageLink } from "@/components"
+import classNames from "classnames"
 
 export const CourseCard = (p: {
+  className?: string,
   id: string,
   sessionName: string,
   img: img,
 }) => {
 
-  const courseName =p.sessionName.replaceAll("\\", " ");
+  const courseName = p.sessionName.replaceAll("\\", " ");
 
   return <>
     <ImageLink
       href={'/classes/' + p.id}
-      className={styles.card}
+      className={classNames(styles.card, p.className)}
       imgUrl={p.img}
       title={courseName}
       subtitle={courseName}

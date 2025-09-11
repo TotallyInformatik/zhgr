@@ -3,19 +3,36 @@
   grid-template-columns: auto;
   grid-template-rows: auto auto;
   position: relative;
+  height: 100%;
+  width: fit-content;
 }
 .card div {
   overflow: hidden;
 }
-.image img {
-  z-index: -1;
-  width: 100%;
+.card img {
+  height: 100% !important;
+  width: auto !important;
   object-fit: cover;
+  z-index: -1;
 }
+
+
+@media screen and (max-width: 790px) {
+  .card img {
+    height: auto !important;
+    width: 100% !important;
+    z-index: -1;
+  }
+}
+
+.card:not(.hasLink) {
+  cursor:default;
+}
+
 .hasLink {
   cursor: pointer;
 }
-.hasLink .image {
+.hasLink img {
   transition: transform 0.5s ease;
 }
 .hasLink:hover .image {

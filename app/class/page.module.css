@@ -33,59 +33,15 @@
   white-space: nowrap;
 }
 
-.sessionGrid {
-  animation: var(--standard-animation);
-  /* width: calc(100% - 350px - 20px - 2 * var(--standard-gap)); */
-  width: 100%;
-  height: 100%;
+.gallery {
   display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 50px;
 }
-.toBeContinued {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.4;
-}
-.toBeContinued .svgContainer {
-  cursor: pointer;
-  position: relative;
-  width: max-content;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.toBeContinued .svgContainer svg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) rotateX(0deg) translateY(0%);
-  transition: all 0.3s ease-in-out;
-}
-.toBeContinued .svgContainer::after {
-  display: block;
-  content: "more in the future.";
-  font-weight: 350;
-  font-family: "Inter";
-  opacity: 0;
-  transform: rotateX(90deg) translateY(100%);
-  transition: all 0.3s ease-in-out;
-}
-.toBeContinued .svgContainer:hover svg {
-  transform: translateX(-50%) rotateX(90deg) translateY(-100%);
-  opacity: 0;
-}
-.toBeContinued .svgContainer:hover::after {
-  transform: rotateX(0deg) translateY(0%);
-  opacity: 1;
-}
 
-.more {
-  width: 100%;
+
+.misc {
+  height: 100%;
 }
 
 .announcement {

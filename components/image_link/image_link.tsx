@@ -7,6 +7,8 @@ import { img } from "@/lib"
 import { TLink } from "../tlink"
 import { default as cn } from "classnames"
 import Link from "next/link"
+import { useContext } from "react"
+import { GrabContext } from "../horizontal_gallery"
 
 export const ImageLink = ({
   href,
@@ -27,7 +29,7 @@ export const ImageLink = ({
   const L = href == undefined ? Link : TLink;
 
   return <>
-    <L 
+    <L
       href={href || "#"}
       className={cn(styles.card, className, href && styles.hasLink)}
       title={title}

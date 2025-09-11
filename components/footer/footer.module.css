@@ -15,7 +15,7 @@
   width: 100%;
   contain: paint;
   gap: 0px;
-  margin-top: 200px;
+  margin-top: 100px;
   padding: var(--standard-gap);
   display: flex;
   flex-direction: column;
