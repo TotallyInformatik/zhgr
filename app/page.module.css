@@ -5,10 +5,38 @@
   width: 100%;
 }
 .headingSection {
+  padding-top: 80px;
   margin-bottom: 80px;
+  position: relative;
 }
+.headingSection img {
+  animation: var(--standard-animation);
+}
+.headingSection .heading {
+  margin-left: 50px;
+}
+.headingSection h1 span {
+  color: white;
+  mix-blend-mode: difference;
+  background-repeat: no-repeat;
+}
+
 .mobileHeading {
   display: none;
+}
+
+
+.quoteSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+.quoteSection blockquote {
+  opacity: 0.6;
+  & > span {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 1030px) {

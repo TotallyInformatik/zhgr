@@ -19,7 +19,7 @@
   padding-inline: var(--standard-gap);
   display: flex;
   align-items: stretch;
-  gap: 40px;
+  gap: 20px;
   width: max-content;
 }
 .grabbing {

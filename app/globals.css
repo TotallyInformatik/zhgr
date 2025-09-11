@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+
 
 :root {
   --footer-height: 300px;
@@ -88,16 +90,45 @@ h3 {
   font-weight: 400;
   margin-bottom: 5px;
 }
-p, a, li {
+p, a, li, blockquote, q {
   font-size: 1.5rem;
   line-height: 2.5rem;
   display: block;
+}
+blockquote {
+  position: relative;
+}
+blockquote::before {
+  font-family: "Fleur De Leah";
+  font-weight: 400;
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: -30px;
+  content: "\"";
+  font-size: 4rem;
 }
 
 img::selection {
   background: none;
 }
 
+@keyframes imgBackgroundColorAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img {
+  background-color: #D1D3D2;
+  animation: 1s ease-in-out 0s infinite imgBackgroundColorAnimation;
+}
 
 header {
   animation: var(--standard-animation);
@@ -183,7 +214,7 @@ header .logo::before {
 
 main {
   width: 100%;
-  /*margin-top: var(--header-height);*/
+  /* margin-top: var(--header-height); */
   padding: var(--standard-gap);
   padding-top: calc(var(--standard-gap) + var(--header-height));
   position: relative;
