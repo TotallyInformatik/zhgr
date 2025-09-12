@@ -6,36 +6,6 @@ import Link from "next/link"
 
 export const Footer = () => {
 
-  /*
-  const currentYear = new Date().getFullYear()
-  const credits = `© ${currentYear} website by rui zhang at eth zurich. some logos by phosphor icons. `
-  const repeatedCredits = credits.repeat(20);
-
-  const span1 = useRef<any>(null!);
-  const span2 = useRef<any>(null!);
-
-  const scrollAnimation = () => {
-    const spanWidth = span1.current.scrollWidth;
-    span2.current.style.left = `${spanWidth}px`;
-
-    setInterval(function(){
-      const currentStyle1 = span1.current.style;
-      const currentStyle2 = span2.current.style;
-
-      const newCurrentLeft1 = currentStyle1.left.replace("px", "") - 0.1;
-      currentStyle1.left = `${newCurrentLeft1}px`;
-
-      const newCurrentLeft2 = currentStyle2.left.trim("px") - 0.1;
-      currentStyle2.left = `${newCurrentLeft2}px`;
-    }, 100);
-  };
-
-  useEffect(() => {
-    scrollAnimation();  
-  }, [])
-
-  */
-
   const iconSize = 32;
 
   return <footer className={styles.footer}>
@@ -46,7 +16,7 @@ export const Footer = () => {
       }}
     >
       <p className="fadeInLink" >Back To Top</p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#000000" viewBox="0 0 256 256"><path d="M240,192a8,8,0,0,1-8,8H88a8,8,0,0,1-8-8V67.31L45.66,101.66A8,8,0,0,1,34.34,90.34l48-48a8,8,0,0,1,11.32,0l48,48a8,8,0,0,1-11.32,11.32L96,67.31V184H232A8,8,0,0,1,240,192Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#000000" viewBox="0 0 256 256"><path d="M240,192a8,8,0,0,1-8,8H88a8,8,0,0,1-8-8V67.31L45.66,101.66A8,8,0,0,1,34.34,90.34l48-48a8,8,0,0,1,11.32,0l48,48a8,8,0,0,1-11.32,11.32L96,67.31V184H232A8,8,0,0,1,240,192Z"></path></svg>
     </div>
     <div className={styles.flex}>
       <section>

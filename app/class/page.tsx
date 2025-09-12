@@ -66,7 +66,7 @@ export default async function Page() {
             </SlideUpAnimation>
           </h1>
           <p>
-            2024 and 2025 I was a teaching assistant at ETH Zurich. Here is an archive of my materials.
+            In 2024 and 2025 I was a teaching assistant at my university, during which I created a lot of supplementary material.
           </p>
         </section>
         {/* <section className={styles.gallery}>
