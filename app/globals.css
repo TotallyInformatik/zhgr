@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
 
 
 :root {
@@ -69,7 +68,7 @@ main, footer {
 
 body {
   overflow-x: hidden;
-  background-color: white;
+  background-color: #F4F4F4;
 }
 
 
@@ -195,14 +194,14 @@ header ul li p {
   width: 100%;
 }
 
-
-
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
 header .logo {
   border-bottom: none;
   font-size: 1.5rem;
   line-height: 1.1rem;
   font-weight: 500;
   cursor: pointer;
+  display: flex;
 }
 .logo span {
   display: block;

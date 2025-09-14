@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: "Rui Zhang - Teaching Assistant ETHZ",
 };
 
+// todo: animate logo
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +28,7 @@ export default function RootLayout({
       <body>
         <header>
           <TLink doesfade href="/" className="logo">
-            ZHANG.RUI
+            <span>ZHANG</span>.<span>RUI</span>
           </TLink>
           <ul>
             <li title="Profile">
@@ -60,6 +62,6 @@ export default function RootLayout({
         <Footer />
         <Analytics />
       </body>
-    </html>
+    </html> 
   );
 }

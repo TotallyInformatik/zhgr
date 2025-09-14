@@ -1,8 +1,6 @@
 "use client";
 import { ReactNode, useEffect } from "react";
-import styles from "./transition.module.css"
-
-import { Footer } from "@/components";
+// import { motion } from 'motion/react';
 
 export default function Template({children}: {children: ReactNode}) {
 
@@ -19,7 +17,12 @@ export default function Template({children}: {children: ReactNode}) {
   }, [])
 
   return <>
-    <div>
+    <div
+      // initial={{ opacity: 0, transform: "translateY(-25px) scale(0.98)" }}
+      // animate={{ opacity: 1, transform: "translateY(0) scale(1)" }}
+      // exit={{ opacity: 0, transform: "translateY(-25px) scale(0.98)" }}
+      // transition={{ duration: 0.4 }}
+    >
       <main>
         {children}
       </main>

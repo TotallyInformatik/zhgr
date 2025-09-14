@@ -50,7 +50,7 @@ export const TLink = ({
     footer.classList.add("page-exit");
 
     setTimeout(function () {
-      router.push(href)
+      router.push(href);
     }, 700)
   }
 

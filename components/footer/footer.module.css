@@ -18,16 +18,20 @@
   margin-top: 100px;
   padding: var(--standard-gap);
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: end;
+  gap: 100px;
+  /* border-top: 1px solid rgba(0, 0, 0, var(--unimportant-opacity)); */
+  padding-top: 100px;
+  width: 100%;
 }
 .flex {
+  width: 100%;
   align-self: flex-start;
   display: flex;
   align-items: start;
   flex-wrap: wrap;
   column-gap: 100px;
-  row-gap: 50px;
+  row-gap: 30px;
 }
 .footer h2 {
   margin-bottom: 5px;
@@ -56,4 +60,15 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.uselessSection {
+  align-self: end;
+}
+.uselessSection h2 {
+  cursor: pointer;
+  font-size: 7rem;
+  font-weight: 500;
+  opacity: 0.05;
+  line-height: 5.5rem;
 }

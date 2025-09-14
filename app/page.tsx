@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import styles from "./page.module.css"
-import { HorizontalGallery, LINE_DELAY, SlideUpAnimation } from "@/components";
+import { Cursor, HorizontalGallery, LINE_DELAY, SlideUpAnimation } from "@/components";
 import image2 from "@/public/ilia-bronskiy-JBHy9_-Tl6E-unsplash.jpg";
 import image3 from "@/public/ilia-bronskiy-ou3d9MxIUow-unsplash.jpg";
 import image4 from "@/public/alexandra-b-Wau4NEcCIlo-unsplash.jpg";
@@ -9,6 +9,10 @@ import image5 from "@/public/danny-chen-qN-K7c2DYM4-unsplash.jpg"
 import image6 from "@/public/mika-baumeister-L4rJd9JhO_w-unsplash.jpg"
 import image7 from "@/public/AF366569-EDDE-4790-9CF2-6BCC4CAD15B4_1_201_a.jpeg"
 import { useEffect } from "react";
+import SmoothScroll from "@/components/scroll/scroll";
+
+// todo:
+// A video section introducing yourself.
 
 export default function Page() {
 
@@ -23,7 +27,7 @@ export default function Page() {
             <span className={styles.likes}>
                 <span>I like programming.</span>
                 <span>I have an incredible minecraft base.</span>
-                <span>I like to run.</span>
+                <span>I like running.</span>
                 <span>I love to build.</span>
                 <span>I like programming.</span>
             </span>
