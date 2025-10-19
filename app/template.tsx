@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode, useEffect } from "react";
-// import { motion } from 'motion/react';
+import { SmoothCursor } from "@/components/ui/smooth-cursor"
 
 export default function Template({children}: {children: ReactNode}) {
 
@@ -23,6 +23,12 @@ export default function Template({children}: {children: ReactNode}) {
       // exit={{ opacity: 0, transform: "translateY(-25px) scale(0.98)" }}
       // transition={{ duration: 0.4 }}
     >
+      <SmoothCursor springConfig={{
+        damping: 30,
+        stiffness: 1200,
+        mass: 0.1,
+        restDelta: 0.001,
+      }}/>
       <main>
         {children}
       </main>

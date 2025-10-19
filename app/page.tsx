@@ -11,9 +11,6 @@ import image7 from "@/public/AF366569-EDDE-4790-9CF2-6BCC4CAD15B4_1_201_a.jpeg"
 import { useEffect } from "react";
 import SmoothScroll from "@/components/scroll/scroll";
 
-// todo:
-// A video section introducing yourself.
-
 export default function Page() {
 
   return <>
@@ -52,27 +49,26 @@ export default function Page() {
         </h1>
       </section>
       <section className={styles.imageSection}>
-        <Image 
-          src={image7}
-          alt="image1"
-          width={image7.width}
-          height={image7.height}
-        />
-        <Image 
-          src={image6}
-          alt="image1"
-          width={image6.width}
-          height={image6.height}
-        />
+        <div>
+          <Image 
+            src={image7}
+            alt="image1"
+            width={image7.width}
+            height={image7.height}
+          />
+          <Image 
+            src={image6}
+            alt="image1"
+            width={image6.width}
+            height={image6.height}
+          />
+        </div>
         <Image 
           src={image2}
           alt="image1"
           width={image2.width}
           height={image2.height}
         />
-      </section>
-      <section className={styles.videoSection}>
-
       </section>
     </section>
   </>

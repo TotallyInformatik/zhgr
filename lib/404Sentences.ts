@@ -1,15 +1,13 @@
 export const NOT_FOUND_SENTENCES = [
   "404 Not Found",
-  "Nothing here but us chickens!",
   "This Page is Empty",
   "Under Construction",
   "I have nothing to show here",
-  "Here lives nothing but the void",
   "VierNullVierNichtGefunden",
   "This page does not exist",
   "Whoever gave you this link lied",
-  "haha get rick rolled lol",
-  "404 404 404 404 404 404 404 404 404 404 404 404 404",
+  "Haha get rick rolled lol",
   "Would it make you happier if this page existed?",
-  "You've reached the end, you can go back",
+  "Okay Garmin, create this page.",
+  "Do you wanna see my minecraft base??"
 ]

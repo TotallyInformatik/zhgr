@@ -2,11 +2,32 @@
 import { useEffect, useRef, useState } from "react"
 import styles from "./footer.module.css"
 import Link from "next/link"
+import { Logo } from "../logo"
+
+
+function getTime(seconds: number) {
+  const minutes = Math.floor(seconds / 60);
+  seconds = seconds % 60;
+
+  return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
 
 export const Footer = () => {
 
   const iconSize = 32;
-  const [count, setCount] = useState(1);
+  const [time, setTime] = useState(1799)
+  const [countdownOver, setCountdownOver] = useState(false)
+
+  useEffect(() => {
+    if (time <= 0) {
+      setCountdownOver(true)
+      return
+    }
+
+    setTimeout(() => {
+      setTime(time - 1)
+    }, 1000)
+  }, [time])
 
   return <footer className={styles.footer}>
     <div className={styles.flex}>
@@ -17,7 +38,7 @@ export const Footer = () => {
             Fotos from <Link className="fadeInLink" href="https://unsplash.com/de">Unsplash</Link>
           </li>
           <li>Icons from <Link className="fadeInLink" href="https://phosphoricons.com">Phosphoricons</Link></li>
-          <li>Website by Rui Zhang</li>
+          <li>Fonts are <Link className="fadeInLink" href="https://fonts.google.com/specimen/Inter">Inter</Link> and <Link className="fadeInLink" href="https://github.com/IdreesInc/Monocraft">Monocraft</Link></li>
         </ul>
       </section>
       <section>
@@ -44,11 +65,11 @@ export const Footer = () => {
         </ul>
       </section>
     </div>
-    {/* let's see how many people we can troll with this, thinking there is something to do hre */}
-    <section className={styles.uselessSection}>
-      <h2 onClick={() => {
-        setCount(count+1);
-      }}>{Math.ceil(count / 2)}</h2>
-    </section>
+    <div className={styles.secondFlex}>
+      <p className={styles.countdown}>
+        {getTime(time)}
+      </p>
+      { countdownOver ? <span className={styles.logo}>Lmao</span> : <Logo className={styles.logo}/> }
+    </div>
   </footer>
 }

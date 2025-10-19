@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Head from "next/head";
-import { DarkModeButton, Footer, TLink } from "@/components";
+import { DarkModeButton, Footer, Logo, TLink } from "@/components";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
-  title: "zhang.rui",
-  description: "Rui Zhang - Teaching Assistant ETHZ",
+  title: "ZHGr",
+  description: "Rui Zhang - CS Student ",
 };
 
 // todo: animate logo
@@ -28,7 +28,7 @@ export default function RootLayout({
       <body>
         <header>
           <TLink doesfade href="/" className="logo">
-            <span>ZHANG</span>.<span>RUI</span>
+            <Logo/>
           </TLink>
           <ul>
             <li title="Profile">
