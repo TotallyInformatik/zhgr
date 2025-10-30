@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react"
 import styles from "./footer.module.css"
 import Link from "next/link"
-import { Logo } from "../logo"
 
 
 function getTime(seconds: number) {
@@ -66,10 +65,12 @@ export const Footer = () => {
       </section>
     </div>
     <div className={styles.secondFlex}>
-      <p className={styles.countdown}>
+      {/* <p className={styles.countdown}>
         {getTime(time)}
       </p>
-      { countdownOver ? <span className={styles.logo}>Lmao</span> : <Logo className={styles.logo}/> }
+      { countdownOver ? <span className={styles.logo}>Lmao</span> : <Logo className={styles.logo}/> } */}
     </div>
+    <p className={styles.disclaimer}><span>Developed w/o</span> <span>UI libraries</span></p>
+    {/* <Logo className={styles.logo}/> */}
   </footer>
 }

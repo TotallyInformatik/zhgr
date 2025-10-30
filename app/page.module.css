@@ -21,6 +21,7 @@
 }
 
 
+
 .mobileHeading {
   display: none;
 }
@@ -94,6 +95,7 @@
   justify-content: space-between;
   margin-bottom: 100px;
   gap: min(2vw, 20px);
+  position: relative;
   & > div {
     display: flex;
     gap: min(2vw, 20px);
@@ -112,6 +114,16 @@
     animation: var(--standard-animation);
   }
 }
+
+.dot {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 50px;
+  bottom: 0;
+}
+
 
 .quoteSection {
   display: flex;
